@@ -5,8 +5,8 @@ import components.*;
  * 
  * @author Patrick Wang, Andrew Yoo
  * @apiNote Main class where everything starts and is initialized.
+ * 
  */
-
 public class Main {
 	
 	// declare static components

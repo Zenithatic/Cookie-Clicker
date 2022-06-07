@@ -10,18 +10,18 @@ import myClasses.*;
  *
  */
 public class MainFrame extends JFrame{
-
-	private static final long serialVersionUID = 1L;
-	
 	// intialize final static fields
 	public static final int WIDTH = 1000;
 	public static final int HEIGHT = 800;
+
 	public static final int HOMEPANEL = 1;
 	public static final int HELPPANEL = 2;
+	public static final int SETTINGSPANEL = 3;
 
 	// create global components
 	HomePanel home;
 	HelpPanel help;
+	SettingsPanel settings;
 
 	// initialize game data variables
 	private int cookies = 0;
@@ -50,6 +50,8 @@ public class MainFrame extends JFrame{
 		// create the Help panel
 		help = new HelpPanel();
 
+		// create the Settings panel
+		settings = new SettingsPanel();
 
 
 		// set the frame to visible
@@ -81,16 +83,25 @@ public class MainFrame extends JFrame{
 	public void setCurrentPanel(int id){
 		// check for panel id and make that panel visible
 		if (id == HOMEPANEL){
-			this.add(home);
-			this.remove(help);
-			this.revalidate();
-			this.repaint();
+			this.getContentPane().removeAll();
+			this.getContentPane().add(home);
+			this.getContentPane().invalidate();
+			this.getContentPane().revalidate();
+			this.getContentPane().repaint();
 		}
 		else if (id == HELPPANEL){
-			this.add(help);
-			this.remove(home);
-			this.revalidate();
-			this.repaint();
+			this.getContentPane().removeAll();
+			this.getContentPane().add(help);
+			this.getContentPane().invalidate();
+			this.getContentPane().revalidate();
+			this.getContentPane().repaint();
+		}
+		else if (id == SETTINGSPANEL){
+			this.getContentPane().removeAll();
+			this.getContentPane().add(settings);
+			this.getContentPane().invalidate();
+			this.getContentPane().revalidate();
+			this.getContentPane().repaint();
 		}
 	}
 	

@@ -1,23 +1,23 @@
 package components;
 import java.awt.*;
 import javax.swing.*;
-import listeners.HelpBackListener;
 import java.io.*;
 import javax.imageio.ImageIO;
+import listeners.*;
 
 /**
  * 
  * @author Patrick Wang, Andrew Yoo
- * @apiNote the JPanel where the user will be able to view how to play
+ * @apiNote the JPanel subclass for the settings page
  * 
  */
-public class HelpPanel extends JPanel{
-	/**
-	 * 
-	 * @apiNote Constructor for the HelpPanel component
-	 * 
-	 */
-    public HelpPanel(){
+public class SettingsPanel extends JPanel{
+    /**
+     * 
+     * @apiNote Constructor for the SettingsPanel component
+     * 
+     */
+    public SettingsPanel(){
         // initialize panel
         this.setLayout(null);
 
@@ -37,11 +37,11 @@ public class HelpPanel extends JPanel{
             // print out traced error
             e.printStackTrace();
         }
-        
-        // add listener to back button
+
+        // re-use HelpBackListener and add it to the back button
         goBack.addMouseListener(new HelpBackListener());
 
-        // add back button
+        // add button to panel
         this.add(goBack);
     }
 
@@ -53,12 +53,11 @@ public class HelpPanel extends JPanel{
 		// apply background
 		try {
             // get and draw image
-			Image bg = ImageIO.read(new File("assets\\helpPanel.png")).getScaledInstance(1000, 770, java.awt.Image.SCALE_SMOOTH);
+			Image bg = ImageIO.read(new File("assets\\background.png")).getScaledInstance(1000, 770, java.awt.Image.SCALE_SMOOTH);
 			g.drawImage(bg, 0, 0, null);
 		} catch (IOException e) {
 			// print traced error
 			e.printStackTrace();
 		}
 	}
-	
 }

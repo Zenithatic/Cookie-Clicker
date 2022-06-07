@@ -46,5 +46,4 @@ public class CloseGameListener implements MouseListener {
             exception.printStackTrace();
         }
     }
-    
 }
