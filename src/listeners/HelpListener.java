@@ -4,13 +4,12 @@ import java.awt.event.*;
 import java.io.*;
 import javax.imageio.ImageIO;
 import javax.swing.*;
-
 import main_pkg.Main;
 import components.*;
 
 /**
  * 
- * @author Patrick Wang
+ * @author Patrick Wang, Andrew Yoo
  * @apiNote The custom MouseListener for the help button
  * 
  */

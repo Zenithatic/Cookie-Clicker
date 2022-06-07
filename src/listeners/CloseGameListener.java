@@ -7,7 +7,7 @@ import javax.swing.*;
 
 /**
  * 
- * @author Patrick Wang
+ * @author Patrick Wang, Andrew Yoo
  * @apiNote The custom MouseListener for the close game button
  * 
  */

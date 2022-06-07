@@ -7,11 +7,10 @@ import listeners.*;
 
 /**
  * 
- * @author Patrick Wang
+ * @author Patrick Wang, Andrew Yoo
  * @apiNote The first JPanel the user will see where there is an option to view settings, view how to play, and load data
  *
  */
-
 public class HomePanel extends JPanel{
 	
 	private static final long serialVersionUID = 1L;

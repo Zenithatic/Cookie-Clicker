@@ -3,10 +3,9 @@ import java.awt.*;
 import javax.swing.*;
 import myClasses.*;
 
-
 /**
  * 
- * @author Patrick Wang
+ * @author Patrick Wang, Andrew Yoo
  * @apiNote The Main JFrame where the game will be displayed and managed
  *
  */
@@ -80,6 +79,7 @@ public class MainFrame extends JFrame{
 	 * 
 	 */
 	public void setCurrentPanel(int id){
+		// check for panel id and make that panel visible
 		if (id == HOMEPANEL){
 			this.add(home);
 			this.remove(help);

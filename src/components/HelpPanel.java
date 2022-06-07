@@ -1,19 +1,16 @@
 package components;
 import java.awt.*;
 import javax.swing.*;
-
 import listeners.HelpBackListener;
-
 import java.io.*;
 import javax.imageio.ImageIO;
 
 /**
  * 
- * @author Patrick Wang
+ * @author Patrick Wang, Andrew Yoo
  * @apiNote the JPanel where the user will be able to view how to play
  * 
  */
-
 public class HelpPanel extends JPanel{
 	
 	private static final long serialVersionUID = 1L;

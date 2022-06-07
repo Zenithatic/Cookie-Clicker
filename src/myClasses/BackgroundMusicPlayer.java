@@ -4,9 +4,8 @@ import javax.sound.sampled.*;;;
 
 /**
  * 
- * @author Patrick Wang
+ * @author Patrick Wang, Andrew Yoo
  * @apiNote A class to play the background music
- * @apiNote Citation to https://www.geeksforgeeks.org/play-audio-file-using-java/ - example used
  * 
  */
 public class BackgroundMusicPlayer {
@@ -34,7 +33,6 @@ public class BackgroundMusicPlayer {
             audioClip.loop(Clip.LOOP_CONTINUOUSLY);
 
             // create volume control
-            // Default decibels: 0.0 (6.0206 max, -80.0 min) (70 preferred min)
             masterVolume = (FloatControl) audioClip.getControl(FloatControl.Type.MASTER_GAIN);
  
             // start music
@@ -59,6 +57,8 @@ public class BackgroundMusicPlayer {
      * 
      */
     public void setVolume (float decibels){
+		// set decibel offset
+		// default decibel value: 0.0 (6.0206 max, -80.0 min) (70 preferred min)
         masterVolume.setValue(decibels);
     }
 }
