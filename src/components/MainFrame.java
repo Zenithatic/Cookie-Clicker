@@ -22,6 +22,7 @@ public class MainFrame extends JFrame{
 	HomePanel home;
 	HelpPanel help;
 	SettingsPanel settings;
+	BackgroundMusicPlayer bmp;
 
 	// initialize game data variables
 	private int cookies = 0;
@@ -40,7 +41,7 @@ public class MainFrame extends JFrame{
 		this.setBounds(new Rectangle(100, 100, WIDTH, HEIGHT));
 
 		// instantiate the BackgroundMusicPlayer class
-		BackgroundMusicPlayer bmp = new BackgroundMusicPlayer();
+		bmp = new BackgroundMusicPlayer();
 		bmp.setVolume(0.0f);
 
 		// add the Home panel
@@ -104,5 +105,14 @@ public class MainFrame extends JFrame{
 			this.getContentPane().repaint();
 		}
 	}
-	
+
+	/**
+	 * 
+	 * @return BackgroundMusicPlayer of the game
+	 * @apiNote This method returns the instance of the BackgroundMusicPlayer class in the game. 
+	 * 
+	 */
+	public BackgroundMusicPlayer getMusic(){
+		return this.bmp;
+	}
 }

@@ -33,5 +33,4 @@ public class Main {
 		// return the MainFrame 'game'
 		return game;
 	}
-	
 }

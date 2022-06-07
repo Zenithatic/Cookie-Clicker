@@ -43,6 +43,19 @@ public class SettingsPanel extends JPanel{
 
         // add button to panel
         this.add(goBack);
+
+        // create JSlider for volume
+        JSlider volume = new JSlider(-50, 0, 0);
+        volume.setPaintTicks(true);
+        volume.setPaintLabels(true);
+        volume.setMajorTickSpacing(10);
+        volume.setMinorTickSpacing(1);
+        volume.setLabelTable(volume.createStandardLabels(10));
+        volume.setBounds(new Rectangle(375, 158, 500, 55));
+        volume.setFont(new Font("Comic Sans MS", Font.BOLD, 15));
+        volume.addChangeListener(new VolumeChangeListener());
+        this.add(volume);
+
     }
 
     // paint graphics onto panel
@@ -53,7 +66,7 @@ public class SettingsPanel extends JPanel{
 		// apply background
 		try {
             // get and draw image
-			Image bg = ImageIO.read(new File("assets\\background.png")).getScaledInstance(1000, 770, java.awt.Image.SCALE_SMOOTH);
+			Image bg = ImageIO.read(new File("assets\\settingsbg.png")).getScaledInstance(1000, 770, java.awt.Image.SCALE_SMOOTH);
 			g.drawImage(bg, 0, 0, null);
 		} catch (IOException e) {
 			// print traced error
