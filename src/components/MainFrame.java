@@ -2,6 +2,7 @@ package components;
 import java.awt.*;
 import javax.swing.*;
 import myClasses.*;
+import java.io.*;
 
 /**
  * 
@@ -42,7 +43,22 @@ public class MainFrame extends JFrame{
 
 		// instantiate the BackgroundMusicPlayer class
 		bmp = new BackgroundMusicPlayer();
-		bmp.setVolume(0.0f);
+		// load saved volume from last time
+		try {
+			// read volumeConfig file and load up previous volume
+			FileReader file = new FileReader("saves\\volumeConfig.txt");
+			BufferedReader buffer = new BufferedReader(file);
+			int vol = Integer.parseInt(buffer.readLine());
+			// close writers
+			buffer.close();
+            file.close();
+			// set volume
+			bmp.setVolume((float) vol);
+
+		} catch (IOException e) {
+			// print traced error
+			e.printStackTrace();
+		}
 
 		// add the Home panel
 		home = new HomePanel();

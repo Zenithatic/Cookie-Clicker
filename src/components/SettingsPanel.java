@@ -44,8 +44,24 @@ public class SettingsPanel extends JPanel{
         // add button to panel
         this.add(goBack);
 
+        // read previous volume
+        int vol = 0;
+		try {
+			// read volumeConfig file and load up previous volume
+			FileReader file = new FileReader("saves\\volumeConfig.txt");
+			BufferedReader buffer = new BufferedReader(file);
+			vol = Integer.parseInt(buffer.readLine());
+            // close readers
+            buffer.close();
+            file.close();
+
+		} catch (IOException e) {
+			// print traced error
+			e.printStackTrace();
+		}
+
         // create JSlider for volume
-        JSlider volume = new JSlider(-50, 0, 0);
+        JSlider volume = new JSlider(-50, 0, vol);
         volume.setPaintTicks(true);
         volume.setPaintLabels(true);
         volume.setMajorTickSpacing(10);
