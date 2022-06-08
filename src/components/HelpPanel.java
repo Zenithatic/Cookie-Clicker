@@ -1,7 +1,7 @@
 package components;
 import java.awt.*;
 import javax.swing.*;
-import listeners.HelpBackListener;
+import listeners.BackListener;
 import java.io.*;
 import javax.imageio.ImageIO;
 
@@ -39,7 +39,7 @@ public class HelpPanel extends JPanel{
         }
         
         // add listener to back button
-        goBack.addMouseListener(new HelpBackListener());
+        goBack.addMouseListener(new BackListener());
 
         // add back button
         this.add(goBack);

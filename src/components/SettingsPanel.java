@@ -38,8 +38,8 @@ public class SettingsPanel extends JPanel{
             e.printStackTrace();
         }
 
-        // re-use HelpBackListener and add it to the back button
-        goBack.addMouseListener(new HelpBackListener());
+        // re-use BackListener and add it to the back button
+        goBack.addMouseListener(new BackListener());
 
         // add button to panel
         this.add(goBack);

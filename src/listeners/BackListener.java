@@ -13,7 +13,7 @@ import components.*;
  * @apiNote The custom MouseListener for the return to main menu button in the help panel
  * 
  */
-public class HelpBackListener implements MouseListener{
+public class BackListener implements MouseListener{
     // implement these methods to fulfill abstraction
     public void mouseClicked(MouseEvent e){}
     public void mouseReleased(MouseEvent e){}
