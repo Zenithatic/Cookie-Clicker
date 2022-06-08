@@ -60,7 +60,7 @@ public class SettingsPanel extends JPanel{
 			e.printStackTrace();
 		}
 
-        // create JSlider for volume
+        // create JSlider for volume and customize it
         JSlider volume = new JSlider(-50, 0, vol);
         volume.setPaintTicks(true);
         volume.setPaintLabels(true);
@@ -69,6 +69,8 @@ public class SettingsPanel extends JPanel{
         volume.setLabelTable(volume.createStandardLabels(10));
         volume.setBounds(new Rectangle(375, 158, 500, 55));
         volume.setFont(new Font("Comic Sans MS", Font.BOLD, 15));
+        
+        // add change listener to slider
         volume.addChangeListener(new VolumeChangeListener());
         this.add(volume);
 

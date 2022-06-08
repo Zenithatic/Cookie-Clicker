@@ -11,10 +11,10 @@ import javax.sound.sampled.*;;;
 public class BackgroundMusicPlayer {
 
     // declare variables
-    static String musicPath = "assets\\bgMusic.wav";
-    Clip audioClip;
-    AudioInputStream inputStream;
-    FloatControl masterVolume;
+    public static String musicPath = "assets\\bgMusic.wav";
+    private Clip audioClip;
+    private AudioInputStream inputStream;
+    private FloatControl masterVolume;
 
     /**
      * 
