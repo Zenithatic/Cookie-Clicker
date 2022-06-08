@@ -20,10 +20,10 @@ public class MainFrame extends JFrame{
 	public static final int SETTINGSPANEL = 3;
 
 	// create global components
-	HomePanel home;
-	HelpPanel help;
-	SettingsPanel settings;
-	BackgroundMusicPlayer bmp;
+	private HomePanel home;
+	private HelpPanel help;
+	private SettingsPanel settings;
+	private BackgroundMusicPlayer bmp;
 
 	// initialize game data variables
 	private int cookies = 0;

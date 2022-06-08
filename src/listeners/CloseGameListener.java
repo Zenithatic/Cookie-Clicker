@@ -15,12 +15,12 @@ public class CloseGameListener implements MouseListener {
     // implement these methods to fulfill abstraction
     public void mouseClicked(MouseEvent e){}
     public void mouseReleased(MouseEvent e){}
-
+    
     public void mousePressed(MouseEvent e){
         // close the application
         System.exit(0);
     }
-
+    
     public void mouseEntered(MouseEvent e){
         // replace Image Icon of close button with selected form
         JButton closeButton = (JButton) e.getSource();
