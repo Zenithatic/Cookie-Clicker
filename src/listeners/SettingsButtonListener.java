@@ -59,6 +59,5 @@ public class SettingsButtonListener implements MouseListener{
             // output traced error
             exception.printStackTrace();
         }
-    }
-    
+    } 
 }

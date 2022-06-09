@@ -14,16 +14,19 @@ public class MainFrame extends JFrame{
 	// intialize final static fields
 	public static final int WIDTH = 1000;
 	public static final int HEIGHT = 800;
-
+	
+	// panel IDS for the setCurrentPanel() method
 	public static final int HOMEPANEL = 1;
 	public static final int HELPPANEL = 2;
 	public static final int SETTINGSPANEL = 3;
+	public static final int LOADPANEL = 4;
 
 	// create global components
 	private HomePanel home;
 	private HelpPanel help;
 	private SettingsPanel settings;
 	private BackgroundMusicPlayer bmp;
+	private LoadPanel load;
 
 	// initialize game data variables
 	private int cookies = 0;
@@ -69,7 +72,9 @@ public class MainFrame extends JFrame{
 
 		// create the Settings panel
 		settings = new SettingsPanel();
-
+		
+		// create the new Load panel
+		load = new LoadPanel();
 
 		// set the frame to visible
 		this.setVisible(true);
@@ -116,6 +121,13 @@ public class MainFrame extends JFrame{
 		else if (id == SETTINGSPANEL){
 			this.getContentPane().removeAll();
 			this.getContentPane().add(settings);
+			this.getContentPane().invalidate();
+			this.getContentPane().revalidate();
+			this.getContentPane().repaint();
+		}
+		else if (id == LOADPANEL) {
+			this.getContentPane().removeAll();
+			this.getContentPane().add(load);
 			this.getContentPane().invalidate();
 			this.getContentPane().revalidate();
 			this.getContentPane().repaint();

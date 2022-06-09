@@ -38,7 +38,7 @@ public class SettingsPanel extends JPanel{
             e.printStackTrace();
         }
 
-        // re-use BackListener and add it to the back button
+        // and mouse listener to the back button
         goBack.addMouseListener(new BackListener());
 
         // add button to panel

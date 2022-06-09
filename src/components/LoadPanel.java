@@ -8,19 +8,19 @@ import javax.imageio.ImageIO;
 /**
  * 
  * @author Patrick Wang, Andrew Yoo
- * @apiNote the JPanel where the user will be able to view how to play
- * 
+ * @apiNote the JPanel where the user will be able to load up or reset their data
+ *
  */
-public class HelpPanel extends JPanel{
+public class LoadPanel extends JPanel{
 	/**
 	 * 
-	 * @apiNote Constructor for the HelpPanel component
+	 * @apiNote Constructor for the LoadPanel component
 	 * 
 	 */
-    public HelpPanel(){
-        // initialize panel
+	public LoadPanel() {
+		// initialize panel
         this.setLayout(null);
-
+        
         // create back button
         JButton goBack = new JButton();
         goBack.setContentAreaFilled(false);
@@ -43,9 +43,9 @@ public class HelpPanel extends JPanel{
 
         // add back button
         this.add(goBack);
-    }
-
-    // paint graphics onto panel
+	}
+	
+	// paint graphics onto panel
 	@Override
 	protected void paintComponent(Graphics g) {
 		super.paintComponent(g);
@@ -53,11 +53,11 @@ public class HelpPanel extends JPanel{
 		// apply background
 		try {
             // get and draw image
-			Image bg = ImageIO.read(new File("assets\\helpPanel.png")).getScaledInstance(1000, 770, java.awt.Image.SCALE_SMOOTH);
+			Image bg = ImageIO.read(new File("assets\\loadbg.png")).getScaledInstance(1000, 770, java.awt.Image.SCALE_SMOOTH);
 			g.drawImage(bg, 0, 0, null);
 		} catch (IOException e) {
 			// print traced error
 			e.printStackTrace();
 		}
-	}	
+	}
 }

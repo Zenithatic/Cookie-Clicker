@@ -139,5 +139,4 @@ public class HomePanel extends JPanel{
 			e.printStackTrace();
 		}
 	}
-	
 }
