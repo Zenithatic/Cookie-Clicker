@@ -1,10 +1,11 @@
 package listeners;
 import java.awt.Image;
 import java.awt.event.*;
-import java.io.File;
-import java.io.IOException;
+import java.io.*;
 import javax.imageio.ImageIO;
 import javax.swing.*;
+
+import main_pkg.Main;
 
 /**
  * 
@@ -18,7 +19,8 @@ public class LoadListener implements MouseListener{
     public void mouseReleased(MouseEvent e){}
     
     public void mousePressed(MouseEvent e){
-
+    	JButton loadButton = (JButton) e.getSource();
+    	Main.getMainFrame().loadSlot(loadButton.getName());
     }
     
     public void mouseEntered(MouseEvent e){

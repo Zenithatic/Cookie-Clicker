@@ -1,9 +1,7 @@
 package listeners;
 import java.awt.Image;
 import java.awt.event.*;
-import java.io.File;
-import java.io.FileWriter;
-import java.io.IOException;
+import java.io.*;
 import javax.imageio.ImageIO;
 import javax.swing.*;
 
@@ -25,6 +23,7 @@ public class ResetListener implements MouseListener{
     public void mousePressed(MouseEvent e){
     	// get components
     	JButton resetButton = (JButton) e.getSource();
+    	
     	// get user choice
 		int option = JOptionPane.showConfirmDialog(null, "Are you sure you want to reset this slot?", "Action Confirmation", JOptionPane.YES_NO_CANCEL_OPTION, JOptionPane.WARNING_MESSAGE);
     	
@@ -33,45 +32,36 @@ public class ResetListener implements MouseListener{
 			return;
 		}
 		
-    	// 1) check which slot the button will reset
-    	// 2) prompt user for verification
-    	// 3) reset slot if confirmed
-    	if (resetButton.getName().equals("reset1")) {
-    		// erase slot 1
-    		try {
-				// erase cookies
-				FileWriter cookieFile = new FileWriter("saves\\slot1\\cookies.txt");
-				cookieFile.write(ZERO);
-				cookieFile.close();
-			} catch (IOException e2) {
-				// output traced error
-				e2.printStackTrace();
+		// determine which slot to load
+		String fileDirectoryToClear= "";
+		
+		if (resetButton.getName().equals("reset1")) {
+			fileDirectoryToClear = "slot1";
+		}
+		else if (resetButton.getName().equals("reset2")) {
+			fileDirectoryToClear = "slot2";
+		}
+		else if (resetButton.getName().equals("reset3")) {
+			fileDirectoryToClear = "slot3";
+		}
+		
+		// start clearing data
+		try {
+			// declare required local variables
+			File directory = new File("saves\\" + fileDirectoryToClear);
+			File[] fileList = directory.listFiles();
+			
+			// set everything in save directory to 0
+			for (int i = 0; i < fileList.length; i++) {
+				// write 0
+				FileWriter file = new FileWriter(fileList[i]);
+				file.write(ZERO);
+				file.close();
 			}
-    	}
-    	else if (resetButton.getName().equals("reset2")) {
-    		// erase slot 2
-    		try {
-				// erase cookies
-				FileWriter cookieFile = new FileWriter("saves\\slot2\\cookies.txt");
-				cookieFile.write(ZERO);
-				cookieFile.close();
-			} catch (IOException e2) {
-				// output traced error
-				e2.printStackTrace();
-			}
-    	}
-    	else if (resetButton.getName().equals("reset3")) {
-    		// erase slot 3
-    		try {
-				// erase cookies
-				FileWriter cookieFile = new FileWriter("saves\\slot3\\cookies.txt");
-				cookieFile.write(ZERO);
-				cookieFile.close();
-			} catch (IOException e2) {
-				// output traced error
-				e2.printStackTrace();
-			}
-    	}
+		} catch (IOException e2) {
+			// output traced error
+			e2.printStackTrace();
+		}
     }
     
     public void mouseEntered(MouseEvent e){

@@ -1,7 +1,6 @@
 package listeners;
 import javax.swing.*;
-import javax.swing.event.ChangeEvent;
-import javax.swing.event.ChangeListener;
+import javax.swing.event.*;
 import java.io.*;
 import main_pkg.Main;
 

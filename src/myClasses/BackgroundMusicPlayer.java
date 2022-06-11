@@ -1,6 +1,6 @@
 package myClasses;
 import java.io.*;
-import javax.sound.sampled.*;;;
+import javax.sound.sampled.*;
 
 /**
  * 

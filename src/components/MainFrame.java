@@ -20,6 +20,10 @@ public class MainFrame extends JFrame{
 	public static final int HELPPANEL = 2;
 	public static final int SETTINGSPANEL = 3;
 	public static final int LOADPANEL = 4;
+	public static final int GAMEPANEL = 5;
+	
+	// file name IDS for the loadSlot() method
+	public static final String COOKIE_FILE = "cookies.txt";
 
 	// create global components
 	private HomePanel home;
@@ -27,6 +31,7 @@ public class MainFrame extends JFrame{
 	private SettingsPanel settings;
 	private BackgroundMusicPlayer bmp;
 	private LoadPanel load;
+	private GamePanel game;
 
 	// initialize game data variables
 	private int cookies = 0;
@@ -75,6 +80,9 @@ public class MainFrame extends JFrame{
 		
 		// create the new Load panel
 		load = new LoadPanel();
+		
+		// create the new Game panel
+		game = new GamePanel();
 
 		// set the frame to visible
 		this.setVisible(true);
@@ -132,6 +140,13 @@ public class MainFrame extends JFrame{
 			this.getContentPane().revalidate();
 			this.getContentPane().repaint();
 		}
+		else if (id == GAMEPANEL) {
+			this.getContentPane().removeAll();
+			this.getContentPane().add(game);
+			this.getContentPane().invalidate();
+			this.getContentPane().revalidate();
+			this.getContentPane().repaint();
+		}
 	}
 
 	/**
@@ -142,5 +157,51 @@ public class MainFrame extends JFrame{
 	 */
 	public BackgroundMusicPlayer getMusic(){
 		return this.bmp;
+	}
+	
+	/**
+	 * 
+	 * @param slot - String
+	 * @apiNote This method is used to load up data from a slot.
+	 * 
+	 */
+	public void loadSlot(String slot) {
+		// determine which slot to load
+		String fileDirectoryToLoad= "";
+		
+		if (slot.equals("load1")) {
+			fileDirectoryToLoad = "slot1";
+		}
+		else if (slot.equals("load2")) {
+			fileDirectoryToLoad = "slot2";
+		}
+		else if (slot.equals("load3")) {
+			fileDirectoryToLoad = "slot3";
+		}
+		
+		// load slot 
+		try {
+			// declare required local variables
+			File directory = new File("saves\\" + fileDirectoryToLoad);
+			File[] fileList = directory.listFiles();
+			
+			// load data
+			for (int i = 0; i < fileList.length; i++) {
+				// create reader and read from file
+				BufferedReader buffer = new BufferedReader(new FileReader(fileList[i]));
+				int value = Integer.parseInt(buffer.readLine());
+				buffer.close();
+
+				// check what kind of data it is then load the data
+				if (fileList[i].getName().equals(COOKIE_FILE)) {
+					this.cookies = value;
+					System.out.println(this.cookies);
+				}
+			}
+		} catch (IOException e2) {
+			// output traced error
+			e2.printStackTrace();
+		}
+		
 	}
 }
