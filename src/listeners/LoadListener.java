@@ -4,7 +4,7 @@ import java.awt.event.*;
 import java.io.*;
 import javax.imageio.ImageIO;
 import javax.swing.*;
-
+import components.MainFrame;
 import main_pkg.Main;
 
 /**
@@ -21,6 +21,7 @@ public class LoadListener implements MouseListener{
     public void mousePressed(MouseEvent e){
     	JButton loadButton = (JButton) e.getSource();
     	Main.getMainFrame().loadSlot(loadButton.getName());
+		Main.getMainFrame().setCurrentPanel(MainFrame.GAMEPANEL);
     }
     
     public void mouseEntered(MouseEvent e){

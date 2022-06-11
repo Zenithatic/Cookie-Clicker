@@ -203,5 +203,6 @@ public class MainFrame extends JFrame{
 			e2.printStackTrace();
 		}
 		
+		game.updateData(this.cookies);
 	}
 }
