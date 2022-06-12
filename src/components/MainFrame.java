@@ -82,7 +82,7 @@ public class MainFrame extends JFrame{
 		load = new LoadPanel();
 		
 		// create the new Game panel
-		game = new GamePanel();
+		game = new GamePanel(this);
 
 		// set the frame to visible
 		this.setVisible(true);
@@ -161,6 +161,16 @@ public class MainFrame extends JFrame{
 	
 	/**
 	 * 
+	 * @return the game panel - GamePanel
+	 * @apiNote This method returns the instance of the current GamePanel.
+	 * 
+	 */
+	public GamePanel getGamePanel() {
+		return this.game;
+	}
+	
+	/**
+	 * 
 	 * @param slot - String
 	 * @apiNote This method is used to load up data from a slot.
 	 * 
@@ -195,7 +205,6 @@ public class MainFrame extends JFrame{
 				// check what kind of data it is then load the data
 				if (fileList[i].getName().equals(COOKIE_FILE)) {
 					this.cookies = value;
-					System.out.println(this.cookies);
 				}
 			}
 		} catch (IOException e2) {

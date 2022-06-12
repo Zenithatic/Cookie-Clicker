@@ -4,6 +4,8 @@ import java.io.*;
 import javax.imageio.ImageIO;
 import javax.swing.*;
 
+import listeners.CookieListener;
+
 /**
  * 
  * @author Patrick Wang, Andrew Yoo
@@ -13,15 +15,17 @@ import javax.swing.*;
 public class GamePanel extends JPanel{
 	// declare instance variables
 	private JLabel cookieCount;
+	private MainFrame mainFrame;
 	
 	/**
 	 * 
 	 * @apiNote Constructor for the GamePanel class
 	 * 
 	 */
-	public GamePanel() {
+	public GamePanel(MainFrame mainFrame) {
 		// initialize panel
 		this.setLayout(null);
+		this.mainFrame = mainFrame;
 		
 		// create cookie count label
 		cookieCount = new JLabel();
@@ -42,6 +46,29 @@ public class GamePanel extends JPanel{
         
         // add cookieCount Jlabel
         this.add(cookieCount);
+        
+        
+        // create cookie button
+        JButton cookie = new JButton();
+        cookie.setBounds(new Rectangle(345, 130, 300, 300));
+        cookie.setContentAreaFilled(false);
+        cookie.setBorder(null);
+        
+        // set Image Icon of cookie label
+        try {
+            // load and apply image
+            Image cookieImage = ImageIO.read(new File("assets\\cookie.png")).getScaledInstance(300, 300, java.awt.Image.SCALE_SMOOTH);
+            cookie.setIcon(new ImageIcon(cookieImage));
+        } catch (IOException exception) {
+            // output traced error
+            exception.printStackTrace();
+        }
+        
+        // add mouse listener to cookie button
+        cookie.addMouseListener(new CookieListener());
+        
+        // add cookie button
+        this.add(cookie);
 	}
 	
 	public void updateData(int cookies) {

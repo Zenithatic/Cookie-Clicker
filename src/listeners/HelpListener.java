@@ -46,7 +46,6 @@ public class HelpListener implements MouseListener{
             // output traced error
             exception.printStackTrace();
         }
-
     }
 
     public void mouseExited(MouseEvent e){
