@@ -20,7 +20,6 @@ public class CookieListener implements MouseListener{
     public static String soundPath = "assets\\cookieClick.wav";
     private Clip audioClip;
     private AudioInputStream inputStream;
-    private FloatControl masterVolume;
 	
     /**
      * 
