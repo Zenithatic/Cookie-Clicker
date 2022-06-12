@@ -24,6 +24,7 @@ public class MainFrame extends JFrame{
 	
 	// file name IDS for the loadSlot() method
 	public static final String COOKIE_FILE = "cookies.txt";
+	public static final String MULTIPLIER_FILE = "multiplier.txt";
 
 	// create global components
 	private HomePanel home;
@@ -36,6 +37,7 @@ public class MainFrame extends JFrame{
 	// initialize game data variables
 	private int currentSlot = 0;
 	private int cookies = 0;
+	private int multiplier = 1;
 
 	/**
 	 * 
@@ -96,6 +98,22 @@ public class MainFrame extends JFrame{
 	public int getCookies(){
 		return this.cookies;
 	}
+	
+	/**
+	 * @return multiplier - int
+	 * @apiNote Method to get the current multiplier of the game
+	 */
+	public int getMultiplier() {
+		return this.multiplier;
+	}
+	
+	/**
+	 * @param multi - int
+	 * @apiNote Setter method for multiplier
+	 */
+	public void setMultiplier(int multi) {
+		this.multiplier = multi;
+	}
 
 	/**
 	 * @apiNote Method to add cookies to balance
@@ -104,12 +122,18 @@ public class MainFrame extends JFrame{
 	public void addCookies(int cookies){
 		this.cookies += cookies;
 	}
+	
+	/**
+	 * @param cookies - int
+	 * @apiNote Method to subtract cookies to balance
+	 */
+	public void subtractCookies(int cookies) {
+		this.cookies -= cookies;
+	}
 
 	/**
-	 * 
 	 * @param int - id 
 	 * @apiNote Method to set the current visible panel
-	 * 
 	 */
 	public void setCurrentPanel(int id){
 		// check for panel id and make that panel visible
@@ -151,40 +175,32 @@ public class MainFrame extends JFrame{
 	}
 
 	/**
-	 * 
 	 * @return BackgroundMusicPlayer of the game
 	 * @apiNote This method returns the instance of the BackgroundMusicPlayer class in the game. 
-	 * 
 	 */
 	public BackgroundMusicPlayer getMusic(){
 		return this.bmp;
 	}
 	
 	/**
-	 * 
 	 * @return the game panel - GamePanel
 	 * @apiNote This method returns the instance of the current GamePanel.
-	 * 
 	 */
 	public GamePanel getGamePanel() {
 		return this.game;
 	}
 	
 	/**
-	 * 
 	 * @return current slot number - int
 	 * @apiNote This method returns the current loaded slot number in the game
-	 * 
 	 */
 	public int getSlot() {
 		return this.currentSlot;
 	}
 	
 	/**
-	 * 
 	 * @param slot - String
 	 * @apiNote This method is used to load up data from a slot.
-	 * 
 	 */
 	public void loadSlot(String slot) {
 		// determine which slot to load
@@ -216,10 +232,15 @@ public class MainFrame extends JFrame{
 				BufferedReader buffer = new BufferedReader(file);
 				int value = Integer.parseInt(buffer.readLine());
 				buffer.close();
-
+				
+				String fileName = fileList[i].getName();
+				
 				// check what kind of data it is then load the data
-				if (fileList[i].getName().equals(COOKIE_FILE)) {
+				if (fileName.equals(COOKIE_FILE)) {
 					this.cookies = value;
+				}
+				else if (fileName.equals(MULTIPLIER_FILE)) {
+					this.multiplier = value;
 				}
 			}
 		} catch (IOException e2) {
@@ -227,6 +248,8 @@ public class MainFrame extends JFrame{
 			e2.printStackTrace();
 		}
 		
-		game.updateData(this.cookies);
+		// update data
+		game.updateCookies(this.cookies);
+		game.updateMultiplier(this.multiplier);
 	}
 }

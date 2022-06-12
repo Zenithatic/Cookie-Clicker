@@ -40,7 +40,7 @@ public class CookieListener implements MouseListener{
             e.printStackTrace();
         }
         catch (LineUnavailableException e){
-            System.out.println("LineUnavailableException occured in the BackgroundMusicPlayer class!");
+            System.out.println("LineUnavailableException occured in the CookieListener class!");
         }
     }
     
@@ -66,10 +66,10 @@ public class CookieListener implements MouseListener{
         cookieButton.setBounds(new Rectangle(360, 145, 270, 270));
         
         // add a cookie to the game
-        Main.getMainFrame().addCookies(1);
+        Main.getMainFrame().addCookies(1 * Main.getMainFrame().getMultiplier());
         
         // update cookie count JPanel
-        Main.getMainFrame().getGamePanel().updateData(Main.getMainFrame().getCookies());
+        Main.getMainFrame().getGamePanel().updateCookies(Main.getMainFrame().getCookies());
         
         // play click sound
         audioClip.start();

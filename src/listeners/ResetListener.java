@@ -1,9 +1,12 @@
 package listeners;
 import java.awt.Image;
+import java.awt.Toolkit;
 import java.awt.event.*;
 import java.io.*;
 import javax.imageio.ImageIO;
 import javax.swing.*;
+
+import components.MainFrame;
 
 /**
  * 
@@ -23,6 +26,9 @@ public class ResetListener implements MouseListener{
     public void mousePressed(MouseEvent e){
     	// get components
     	JButton resetButton = (JButton) e.getSource();
+    	
+    	// ding
+    	Toolkit.getDefaultToolkit().beep();
     	
     	// get user choice
 		int option = JOptionPane.showConfirmDialog(null, "Are you sure you want to reset this slot?", "Action Confirmation", JOptionPane.YES_NO_CANCEL_OPTION, JOptionPane.WARNING_MESSAGE);
@@ -51,12 +57,21 @@ public class ResetListener implements MouseListener{
 			File directory = new File("saves\\" + fileDirectoryToClear);
 			File[] fileList = directory.listFiles();
 			
-			// set everything in save directory to 0
+			// set everything in save directory to default value
 			for (int i = 0; i < fileList.length; i++) {
-				// write 0
-				FileWriter file = new FileWriter(fileList[i]);
-				file.write(ZERO);
-				file.close();
+				// check if file is called multiplier.txt first
+				if (fileList[i].getName().equals(MainFrame.MULTIPLIER_FILE)) {
+					// write 1
+					FileWriter file = new FileWriter(fileList[i]);
+					file.write(ZERO + 1);
+					file.close();
+				}
+				else {
+					// write 0
+					FileWriter file = new FileWriter(fileList[i]);
+					file.write(ZERO);
+					file.close();
+				}
 			}
 		} catch (IOException e2) {
 			// output traced error

@@ -45,9 +45,14 @@ public class SaveExitListener implements MouseListener{
 				FileWriter file = new FileWriter(fileList[i]);
 				BufferedWriter buffer = new BufferedWriter(file);
 
+				String fileName = fileList[i].getName();
+
 				// check what kind of data it is then save the data
-				if (fileList[i].getName().equals(MainFrame.COOKIE_FILE)) {
+				if (fileName.equals(MainFrame.COOKIE_FILE)) {
 					buffer.write(String.valueOf(Main.getMainFrame().getCookies()));
+				}
+				else if (fileName.equals(MainFrame.MULTIPLIER_FILE)) {
+					buffer.write(String.valueOf(Main.getMainFrame().getMultiplier()));
 				}
 				
 				// close writers
