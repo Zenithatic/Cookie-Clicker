@@ -10,20 +10,20 @@ import main_pkg.Main;
 /**
  * 
  * @author Patrick Wang, Andrew Yoo
- * @apiNote the custom MouseListener for the Save and Exit button
+ * @apiNote the custom MouseListener for the Save button
  *
  */
-public class SaveExitListener implements MouseListener{
+public class SaveListener implements MouseListener{
 	// implement these methods to fulfill abstraction
 	public void mouseClicked(MouseEvent e) {}
 	public void mouseReleased(MouseEvent e) {}
 
 	public void mousePressed(MouseEvent e) {
-		// replace Image Icon of save and exit button with non-selected form
+		// replace Image Icon of save button with non-selected form
         JButton saveButton = (JButton) e.getSource();
         try {
             // load and apply image
-            Image saveImage = ImageIO.read(new File("assets\\save_exit.png")).getScaledInstance(200, 80, java.awt.Image.SCALE_SMOOTH);
+            Image saveImage = ImageIO.read(new File("assets\\save.png")).getScaledInstance(100, 80, java.awt.Image.SCALE_SMOOTH);
             saveButton.setIcon(new ImageIcon(saveImage));
         } catch (IOException exception) {
             // output traced error
@@ -58,17 +58,14 @@ public class SaveExitListener implements MouseListener{
  			// output traced error
  			e2.printStackTrace();
  		}
- 		
- 		// return to main menu
- 		Main.getMainFrame().setCurrentPanel(MainFrame.HOMEPANEL);
 	}
 
 	public void mouseEntered(MouseEvent e) {
-		// replace Image Icon of save and exit button with selected form
+		// replace Image Icon of save button with selected form
         JButton saveButton = (JButton) e.getSource();
         try {
             // load and apply image
-            Image saveImage = ImageIO.read(new File("assets\\save_exit_selected.png")).getScaledInstance(200, 80, java.awt.Image.SCALE_SMOOTH);
+            Image saveImage = ImageIO.read(new File("assets\\saveSelected.png")).getScaledInstance(100, 80, java.awt.Image.SCALE_SMOOTH);
             saveButton.setIcon(new ImageIcon(saveImage));
         } catch (IOException exception) {
             // output traced error
@@ -77,11 +74,11 @@ public class SaveExitListener implements MouseListener{
 	}
 
 	public void mouseExited(MouseEvent e) {
-		// replace Image Icon of save and exit button with non-selected form
+		// replace Image Icon of save button with non-selected form
         JButton saveButton = (JButton) e.getSource();
         try {
             // load and apply image
-            Image saveImage = ImageIO.read(new File("assets\\save_exit.png")).getScaledInstance(200, 80, java.awt.Image.SCALE_SMOOTH);
+            Image saveImage = ImageIO.read(new File("assets\\save.png")).getScaledInstance(100, 80, java.awt.Image.SCALE_SMOOTH);
             saveButton.setIcon(new ImageIcon(saveImage));
         } catch (IOException exception) {
             // output traced error

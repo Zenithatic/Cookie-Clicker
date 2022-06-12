@@ -6,6 +6,7 @@ import javax.swing.*;
 
 import listeners.CookieListener;
 import listeners.SaveExitListener;
+import listeners.SaveListener;
 
 /**
  * 
@@ -93,6 +94,29 @@ public class GamePanel extends JPanel{
         
         // add save and exit button
         this.add(save_and_exit);
+        
+        
+        // create save button
+        JButton save = new JButton();
+        save.setBounds(new Rectangle(5, 90, 100, 80));
+        save.setContentAreaFilled(false);
+        save.setBorder(null);
+        
+        // set Image Icon of save button
+        try {
+            // load and apply image
+            Image saveImage = ImageIO.read(new File("assets\\save.png")).getScaledInstance(100, 80, java.awt.Image.SCALE_SMOOTH);
+            save.setIcon(new ImageIcon(saveImage));
+        } catch (IOException exception) {
+            // output traced error
+            exception.printStackTrace();
+        }
+        
+        // add mouse listener to save button
+        save.addMouseListener(new SaveListener());
+        
+        // add save button
+        this.add(save);
 	}
 	
 	/**
