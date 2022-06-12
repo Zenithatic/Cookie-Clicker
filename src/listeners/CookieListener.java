@@ -5,7 +5,6 @@ import java.io.*;
 import javax.imageio.ImageIO;
 import javax.swing.*;
 import main_pkg.Main;
-import components.*;
 import javax.sound.sampled.*;
 
 /**

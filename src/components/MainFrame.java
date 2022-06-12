@@ -34,6 +34,7 @@ public class MainFrame extends JFrame{
 	private GamePanel game;
 
 	// initialize game data variables
+	private int currentSlot = 0;
 	private int cookies = 0;
 
 	/**
@@ -171,6 +172,16 @@ public class MainFrame extends JFrame{
 	
 	/**
 	 * 
+	 * @return current slot number - int
+	 * @apiNote This method returns the current loaded slot number in the game
+	 * 
+	 */
+	public int getSlot() {
+		return this.currentSlot;
+	}
+	
+	/**
+	 * 
 	 * @param slot - String
 	 * @apiNote This method is used to load up data from a slot.
 	 * 
@@ -181,12 +192,15 @@ public class MainFrame extends JFrame{
 		
 		if (slot.equals("load1")) {
 			fileDirectoryToLoad = "slot1";
+			this.currentSlot = 1;
 		}
 		else if (slot.equals("load2")) {
 			fileDirectoryToLoad = "slot2";
+			this.currentSlot = 2;
 		}
 		else if (slot.equals("load3")) {
 			fileDirectoryToLoad = "slot3";
+			this.currentSlot = 3;
 		}
 		
 		// load slot 
@@ -198,7 +212,8 @@ public class MainFrame extends JFrame{
 			// load data
 			for (int i = 0; i < fileList.length; i++) {
 				// create reader and read from file
-				BufferedReader buffer = new BufferedReader(new FileReader(fileList[i]));
+				FileReader file = new FileReader(fileList[i]);
+				BufferedReader buffer = new BufferedReader(file);
 				int value = Integer.parseInt(buffer.readLine());
 				buffer.close();
 
