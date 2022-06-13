@@ -33,6 +33,7 @@ public class MainFrame extends JFrame{
 	private BackgroundMusicPlayer bmp;
 	private LoadPanel load;
 	private GamePanel game;
+	private TitlePanel title;
 
 	// initialize game data variables
 	private int currentSlot = 0;
@@ -45,9 +46,9 @@ public class MainFrame extends JFrame{
 	 * @apiNote Constructor for the Main JFrame component
 	 * 
 	 */
-	public MainFrame(String title) {
+	public MainFrame(String name) {
 		// call frame initialization methods
-		super(title);
+		super(name);
 		this.setResizable(false);
 		this.setDefaultCloseOperation(EXIT_ON_CLOSE);
 		this.setBounds(new Rectangle(100, 100, WIDTH, HEIGHT));
@@ -70,10 +71,13 @@ public class MainFrame extends JFrame{
 			// print traced error
 			e.printStackTrace();
 		}
-
-		// add the Home panel
+		
+		// add the title panel
+		title = new TitlePanel();
+		this.add(title);
+		
+		// create the Home panel
 		home = new HomePanel();
-		this.add(home);
 
 		// create the Help panel
 		help = new HelpPanel();

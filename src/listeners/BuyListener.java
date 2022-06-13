@@ -4,8 +4,6 @@ import java.awt.event.*;
 import java.io.*;
 import javax.imageio.ImageIO;
 import javax.swing.*;
-
-import components.GamePanel;
 import main_pkg.Main;
 import javax.sound.sampled.*;
 

@@ -121,7 +121,6 @@ public class HomePanel extends JPanel{
 		settingsButton.addMouseListener(new SettingsButtonListener());
 		// add settings button to panel
 		this.add(settingsButton);
-
 	}
 	
 	// paint graphics onto panel
