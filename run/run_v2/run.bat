@@ -1,0 +1,24 @@
+javac BackgroundMusicPlayer.java
+javac BackListener.java
+javac BuyListener.java
+javac CloseGameListener.java
+javac CookieListener.java
+javac GamePanel.java
+javac HelpListener.java
+javac HelpPanel.java
+javac HomePanel.java
+javac LoadListener.java
+javac LoadPanel.java
+javac Main.java
+javac MainFrame.java
+javac PlayListener.java
+javac ResetListener.java
+javac SaveExitListener.java
+javac SaveListener.java
+javac SettingsButtonListener.java
+javac SettingsPanel.java
+javac StartListener.java
+javac TitlePanel.java
+javac VolumeChangeListener.java
+java Main
+pause

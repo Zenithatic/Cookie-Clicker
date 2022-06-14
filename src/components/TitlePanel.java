@@ -1,9 +1,7 @@
 package components;
 import java.awt.*;
 import javax.swing.*;
-import listeners.BackListener;
-import listeners.StartListener;
-
+import listeners.*;
 import java.io.*;
 import javax.imageio.ImageIO;
 
