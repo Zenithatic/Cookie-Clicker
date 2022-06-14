@@ -17,7 +17,7 @@ import components.MainFrame;
 public class ResetListener implements MouseListener{
 	
 	// declare final static integer variable for the ascii value of "0"
-	final static int ZERO = 48;
+	public final static int ZERO = 48;
 	
 	// implement these methods to fulfill abstraction
     public void mouseClicked(MouseEvent e){}
