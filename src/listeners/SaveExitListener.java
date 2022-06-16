@@ -1,11 +1,10 @@
 package listeners;
-import java.awt.Image;
 import java.awt.event.*;
 import java.io.*;
-import javax.imageio.ImageIO;
 import javax.swing.*;
 import components.MainFrame;
 import main_pkg.Main;
+import myClasses.Utils;
 
 /**
  * 
@@ -21,14 +20,7 @@ public class SaveExitListener implements MouseListener{
 	public void mousePressed(MouseEvent e) {
 		// replace Image Icon of save and exit button with non-selected form
         JButton saveButton = (JButton) e.getSource();
-        try {
-            // load and apply image
-            Image saveImage = ImageIO.read(new File("assets\\save_exit.png")).getScaledInstance(200, 80, java.awt.Image.SCALE_SMOOTH);
-            saveButton.setIcon(new ImageIcon(saveImage));
-        } catch (IOException exception) {
-            // output traced error
-            exception.printStackTrace();
-        }
+        Utils.applyButtonImage(saveButton, "assets\\save_exit.png", 200, 80);
         
         // find and save slot data
         int slotNumber = Main.getMainFrame().getSlot();
@@ -71,26 +63,12 @@ public class SaveExitListener implements MouseListener{
 	public void mouseEntered(MouseEvent e) {
 		// replace Image Icon of save and exit button with selected form
         JButton saveButton = (JButton) e.getSource();
-        try {
-            // load and apply image
-            Image saveImage = ImageIO.read(new File("assets\\save_exit_selected.png")).getScaledInstance(200, 80, java.awt.Image.SCALE_SMOOTH);
-            saveButton.setIcon(new ImageIcon(saveImage));
-        } catch (IOException exception) {
-            // output traced error
-            exception.printStackTrace();
-        }
+        Utils.applyButtonImage(saveButton, "assets\\save_exit_selected.png", 200, 80);
 	}
 
 	public void mouseExited(MouseEvent e) {
 		// replace Image Icon of save and exit button with non-selected form
         JButton saveButton = (JButton) e.getSource();
-        try {
-            // load and apply image
-            Image saveImage = ImageIO.read(new File("assets\\save_exit.png")).getScaledInstance(200, 80, java.awt.Image.SCALE_SMOOTH);
-            saveButton.setIcon(new ImageIcon(saveImage));
-        } catch (IOException exception) {
-            // output traced error
-            exception.printStackTrace();
-        }
+        Utils.applyButtonImage(saveButton, "assets\\save_exit.png", 200, 80);
 	}
 }

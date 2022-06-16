@@ -4,6 +4,7 @@ import java.io.*;
 import javax.imageio.ImageIO;
 import javax.swing.*;
 import listeners.*;
+import myClasses.Utils;
 
 /**
  * 
@@ -16,7 +17,6 @@ public class GamePanel extends JPanel{
 	private JLabel cookieCount;
 	private JLabel multiplierLabel;
 	private JLabel multiplierPriceLabel;
-	private MainFrame mainFrame;
 	private int nextMultiPrice = 0;
 	
 	/**
@@ -27,7 +27,6 @@ public class GamePanel extends JPanel{
 	public GamePanel(MainFrame mainFrame) {
 		// initialize panel
 		this.setLayout(null);
-		this.mainFrame = mainFrame;
 		
 		// create cookie count label
 		cookieCount = new JLabel();
@@ -37,14 +36,7 @@ public class GamePanel extends JPanel{
 		cookieCount.setForeground(Color.BLACK);
 		
 		// set Image Icon of cookie count label
-        try {
-            // load and apply image
-            Image cookieCountImage = ImageIO.read(new File("assets\\sign.png")).getScaledInstance(300, 80, java.awt.Image.SCALE_SMOOTH);
-            cookieCount.setIcon(new ImageIcon(cookieCountImage));
-        } catch (IOException exception) {
-            // output traced error
-            exception.printStackTrace();
-        }
+        Utils.applyLabelImage(cookieCount, "assets\\sign.png", 300, 80);
         
         // add cookieCount Jlabel
         this.add(cookieCount);
@@ -57,14 +49,7 @@ public class GamePanel extends JPanel{
         cookie.setBorder(null);
         
         // set Image Icon of cookie button
-        try {
-            // load and apply image
-            Image cookieImage = ImageIO.read(new File("assets\\cookie.png")).getScaledInstance(300, 300, java.awt.Image.SCALE_SMOOTH);
-            cookie.setIcon(new ImageIcon(cookieImage));
-        } catch (IOException exception) {
-            // output traced error
-            exception.printStackTrace();
-        }
+        Utils.applyButtonImage(cookie, "assets\\cookie.png", 300, 300);
         
         // add mouse listener to cookie button
         cookie.addMouseListener(new CookieListener());
@@ -80,14 +65,7 @@ public class GamePanel extends JPanel{
         save_and_exit.setBorder(null);
         
         // set Image Icon of save and exit button
-        try {
-            // load and apply image
-            Image saveExitImage = ImageIO.read(new File("assets\\save_exit.png")).getScaledInstance(200, 80, java.awt.Image.SCALE_SMOOTH);
-            save_and_exit.setIcon(new ImageIcon(saveExitImage));
-        } catch (IOException exception) {
-            // output traced error
-            exception.printStackTrace();
-        }
+        Utils.applyButtonImage(save_and_exit, "assets\\save_exit.png", 200, 80);
         
         // add mouse listener to button
         save_and_exit.addMouseListener(new SaveExitListener());
@@ -103,14 +81,7 @@ public class GamePanel extends JPanel{
         save.setBorder(null);
         
         // set Image Icon of save button
-        try {
-            // load and apply image
-            Image saveImage = ImageIO.read(new File("assets\\save.png")).getScaledInstance(100, 80, java.awt.Image.SCALE_SMOOTH);
-            save.setIcon(new ImageIcon(saveImage));
-        } catch (IOException exception) {
-            // output traced error
-            exception.printStackTrace();
-        }
+        Utils.applyButtonImage(save, "assets\\save.png", 100, 80);
         
         // add mouse listener to save button
         save.addMouseListener(new SaveListener());
@@ -127,14 +98,7 @@ public class GamePanel extends JPanel{
         multiplierLabel.setForeground(Color.BLACK);
         
         // set Image Icon of multiplier label
-        try {
-            // load and apply image
-            Image multiplierImage = ImageIO.read(new File("assets\\sign.png")).getScaledInstance(300, 80, java.awt.Image.SCALE_SMOOTH);
-            multiplierLabel.setIcon(new ImageIcon(multiplierImage));
-        } catch (IOException exception) {
-            // output traced error
-            exception.printStackTrace();
-        }
+        Utils.applyLabelImage(multiplierLabel, "assets\\sign.png", 300, 80);
         
         // add multiplier Jlabel
         this.add(multiplierLabel);
@@ -148,14 +112,7 @@ public class GamePanel extends JPanel{
         multiplierPriceLabel.setForeground(Color.BLACK);
         
         // set Image Icon of multiplier price label
-        try {
-            // load and apply image
-            Image multiplierImage = ImageIO.read(new File("assets\\sign.png")).getScaledInstance(300, 80, java.awt.Image.SCALE_SMOOTH);
-            multiplierPriceLabel.setIcon(new ImageIcon(multiplierImage));
-        } catch (IOException exception) {
-            // output traced error
-            exception.printStackTrace();
-        }
+        Utils.applyLabelImage(multiplierPriceLabel, "assets\\sign.png", 300, 80);
         
         // add multiplier price Jlabel
         this.add(multiplierPriceLabel);
@@ -169,14 +126,7 @@ public class GamePanel extends JPanel{
         buyMulti.setName("multiplierUpgrade");
         
         // set Image Icon of multiplier buy button
-        try {
-            // load and apply image
-            Image buyImage = ImageIO.read(new File("assets\\buy.png")).getScaledInstance(100, 80, java.awt.Image.SCALE_SMOOTH);
-            buyMulti.setIcon(new ImageIcon(buyImage));
-        } catch (IOException exception) {
-            // output traced error
-            exception.printStackTrace();
-        }
+        Utils.applyButtonImage(buyMulti, "assets\\buy.png", 100, 80);
         
         // add mouse listener to button
         buyMulti.addMouseListener(new BuyListener());

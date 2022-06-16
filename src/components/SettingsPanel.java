@@ -5,6 +5,7 @@ import java.io.*;
 import javax.imageio.ImageIO;
 import listeners.*;
 import main_pkg.Main;
+import myClasses.Utils;
 
 /**
  * 
@@ -29,15 +30,7 @@ public class SettingsPanel extends JPanel{
         goBack.setBounds(new Rectangle(0, 0, 100, 100));
 
         // apply image onto the back button
-        try{
-            // get and set image
-            Image backImage = ImageIO.read(new File("assets\\back.png")).getScaledInstance(100, 100, java.awt.Image.SCALE_SMOOTH);
-            goBack.setIcon(new ImageIcon(backImage));
-        }
-        catch (IOException e){
-            // print out traced error
-            e.printStackTrace();
-        }
+        Utils.applyButtonImage(goBack, "assets\\back.png", 100, 100);
 
         // and mouse listener to the back button
         goBack.addMouseListener(new BackListener());

@@ -1,11 +1,9 @@
 package listeners;
-import java.awt.*;
 import java.awt.event.*;
-import java.io.*;
-import javax.imageio.ImageIO;
 import javax.swing.*;
 import components.MainFrame;
 import main_pkg.Main;
+import myClasses.Utils;
 
 /**
  * 
@@ -25,39 +23,18 @@ public class PlayListener implements MouseListener{
 
         // replace Image Icon of play button with non-selected form
         JButton playButton = (JButton) e.getSource();
-        try {
-            // load and apply image
-            Image playImage = ImageIO.read(new File("assets\\play.png")).getScaledInstance(300, 150, java.awt.Image.SCALE_SMOOTH);
-			playButton.setIcon(new ImageIcon(playImage));
-        } catch (IOException exception) {
-            // output traced error
-            exception.printStackTrace();
-        }  
+        Utils.applyButtonImage(playButton, "assets\\play.png", 300, 150);
     }
 
     public void mouseEntered(MouseEvent e){
         // replace Image Icon of play button with selected form
         JButton playButton = (JButton) e.getSource();
-        try {
-            // load and apply image
-            Image playImage = ImageIO.read(new File("assets\\playSelected.png")).getScaledInstance(300, 150, java.awt.Image.SCALE_SMOOTH);
-			playButton.setIcon(new ImageIcon(playImage));
-        } catch (IOException exception) {
-            // output traced error
-            exception.printStackTrace();
-        }
-
+        Utils.applyButtonImage(playButton, "assets\\playSelected.png", 300, 150);
     }
+    
     public void mouseExited(MouseEvent e){
         // replace Image Icon of play button with non-selected form
         JButton playButton = (JButton) e.getSource();
-        try {
-            // load and apply image
-            Image playImage = ImageIO.read(new File("assets\\play.png")).getScaledInstance(300, 150, java.awt.Image.SCALE_SMOOTH);
-			playButton.setIcon(new ImageIcon(playImage));
-        } catch (IOException exception) {
-            // output traced error
-            exception.printStackTrace();
-        }
+        Utils.applyButtonImage(playButton, "assets\\play.png", 300, 150);
     } 
 }

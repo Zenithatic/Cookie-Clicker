@@ -2,9 +2,9 @@ package listeners;
 import java.awt.*;
 import java.awt.event.*;
 import java.io.*;
-import javax.imageio.ImageIO;
 import javax.swing.*;
 import main_pkg.Main;
+import myClasses.Utils;
 import javax.sound.sampled.*;
 
 /**
@@ -51,17 +51,9 @@ public class CookieListener implements MouseListener{
 	public void mouseExited(MouseEvent e) {}
 	
 	public void mousePressed(MouseEvent e) {
-		// replace Image Icon of cookie button with selected form
         JButton cookieButton = (JButton) e.getSource();
-        try {
-            // load and apply image
-            Image cookieImage = ImageIO.read(new File("assets\\cookieClicked.png")).getScaledInstance(270, 270, java.awt.Image.SCALE_SMOOTH);
-            cookieButton.setIcon(new ImageIcon(cookieImage));
-        } catch (IOException exception) {
-            // output traced error
-            exception.printStackTrace();
-        }
-        
+        Utils.applyButtonImage(cookieButton, "assets\\cookieClicked.png", 270, 270);
+    
         // set cookie size smaller
         cookieButton.setBounds(new Rectangle(360, 145, 270, 270));
         
@@ -78,14 +70,8 @@ public class CookieListener implements MouseListener{
 	public void mouseReleased(MouseEvent e) {
 		// replace Image Icon of cookie button with non-selected form
         JButton cookieButton = (JButton) e.getSource();
-        try {
-            // load and apply image
-            Image cookieImage = ImageIO.read(new File("assets\\cookie.png")).getScaledInstance(300, 300, java.awt.Image.SCALE_SMOOTH);
-            cookieButton.setIcon(new ImageIcon(cookieImage));
-        } catch (IOException exception) {
-            // output traced error
-            exception.printStackTrace();
-        }
+        Utils.applyButtonImage(cookieButton, "assets\\cookie.png", 300, 300);
+
           
         // set cookie size back to normal
         cookieButton.setBounds(new Rectangle(345, 130, 300, 300));

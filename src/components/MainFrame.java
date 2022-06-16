@@ -51,7 +51,7 @@ public class MainFrame extends JFrame{
 		super(name);
 		this.setResizable(false);
 		this.setDefaultCloseOperation(EXIT_ON_CLOSE);
-		this.setBounds(new Rectangle(100, 100, WIDTH, HEIGHT));
+		this.setBounds(new Rectangle(50, -50, WIDTH, HEIGHT));
 
 		// instantiate the BackgroundMusicPlayer class
 		bmp = new BackgroundMusicPlayer();

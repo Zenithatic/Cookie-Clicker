@@ -2,6 +2,8 @@ package components;
 import java.awt.*;
 import javax.swing.*;
 import listeners.BackListener;
+import myClasses.Utils;
+
 import java.io.*;
 import javax.imageio.ImageIO;
 
@@ -28,15 +30,7 @@ public class HelpPanel extends JPanel{
         goBack.setBounds(new Rectangle(0, 0, 100, 100));
 
         // apply image onto the back button
-        try{
-            // get and set image
-            Image backImage = ImageIO.read(new File("assets\\back.png")).getScaledInstance(100, 100, java.awt.Image.SCALE_SMOOTH);
-            goBack.setIcon(new ImageIcon(backImage));
-        }
-        catch (IOException e){
-            // print out traced error
-            e.printStackTrace();
-        }
+        Utils.applyButtonImage(goBack, "assets\\\\back.png", 100, 100);
         
         // add listener to back button
         goBack.addMouseListener(new BackListener());

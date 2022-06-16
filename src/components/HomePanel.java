@@ -4,6 +4,7 @@ import javax.swing.*;
 import java.io.*;
 import javax.imageio.ImageIO;
 import listeners.*;
+import myClasses.Utils;
 
 /**
  * 
@@ -33,18 +34,13 @@ public class HomePanel extends JPanel{
 		playButton.setPreferredSize(new Dimension(300, 150));
 		playButton.setContentAreaFilled(false);
 		playButton.setBorder(null);
-		// add play button image
-		try {
-			// get and set image
-			Image playImage = ImageIO.read(new File("assets\\play.png")).getScaledInstance(300, 150, java.awt.Image.SCALE_SMOOTH);
-			playButton.setIcon(new ImageIcon(playImage));
 
-		} catch (IOException e) {
-			// output traced error
-			e.printStackTrace();
-		}
+		// add play button image
+		Utils.applyButtonImage(playButton, "assets\\play.png", 300, 150);
+		
 		// add a mouse listener to the button 
 		playButton.addMouseListener(new PlayListener());
+		
 		// add play button to panel
 		subPanel.add(playButton);
 
@@ -53,34 +49,23 @@ public class HomePanel extends JPanel{
 		helpButton.setPreferredSize(new Dimension(300, 150));
 		helpButton.setContentAreaFilled(false);
 		helpButton.setBorder(null);
+		
 		// add help button image
-		try {
-			// get and set image
-			Image helpImage = ImageIO.read(new File("assets\\help.png")).getScaledInstance(300, 150, java.awt.Image.SCALE_SMOOTH);
-			helpButton.setIcon(new ImageIcon(helpImage));
-
-		} catch (IOException e) {
-			// output traced error
-			e.printStackTrace();
-		}
+		Utils.applyButtonImage(helpButton, "assets\\help.png", 300, 150);
+		
 		// add a mouse listener to the button 
 		helpButton.addMouseListener(new HelpListener());
+		
 		// add help button to panel
 		subPanel.add(helpButton);
 
 		// create title label
 		JLabel title = new JLabel();
 		title.setBounds(new Rectangle(250, 50, 500, 200));
+		
 		// add title image
-		try {
-			// get and set image
-			Image titleImage = ImageIO.read(new File("assets\\title.png")).getScaledInstance(500, 200, java.awt.Image.SCALE_SMOOTH);
-			title.setIcon(new ImageIcon(titleImage));
-
-		} catch (IOException e) {
-			// output traced error
-			e.printStackTrace();
-		}
+		Utils.applyLabelImage(title, "assets\\title.png", 500, 200);
+		
 		// add title label to panel
 		this.add(title);
 
@@ -98,8 +83,13 @@ public class HomePanel extends JPanel{
 			// output traced error
 			e.printStackTrace();
 		}
+		
+		// apply close button image
+		Utils.applyButtonImage(closeButton, "assets\\\\close.png", 100, 100);
+		
 		// add a mouse listener to the button 
 		closeButton.addMouseListener(new CloseGameListener());
+		
 		// add close button to panel
 		this.add(closeButton);
 
@@ -108,17 +98,13 @@ public class HomePanel extends JPanel{
 		settingsButton.setBounds(new Rectangle(855, 30, 100, 100));
 		settingsButton.setContentAreaFilled(false);
 		settingsButton.setBorder(null);
+		
 		// add settings image
-		try {
-			Image settingsImage = ImageIO.read(new File("assets\\settingsGear.png")).getScaledInstance(100, 100, java.awt.Image.SCALE_SMOOTH);
-			settingsButton.setIcon(new ImageIcon(settingsImage));
-
-		} catch (IOException e) {
-			// output traced error
-			e.printStackTrace();
-		}
+		Utils.applyButtonImage(settingsButton, "assets\\settingsGear.png", 100, 100);
+		
 		// add a mouse listener to the button
 		settingsButton.addMouseListener(new SettingsButtonListener());
+		
 		// add settings button to panel
 		this.add(settingsButton);
 	}

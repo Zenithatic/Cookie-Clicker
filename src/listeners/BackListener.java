@@ -1,10 +1,8 @@
 package listeners;
-import java.awt.*;
 import java.awt.event.*;
-import java.io.*;
-import javax.imageio.ImageIO;
 import javax.swing.*;
 import main_pkg.Main;
+import myClasses.Utils;
 import components.*;
 
 /**
@@ -25,39 +23,18 @@ public class BackListener implements MouseListener{
 
         // replace Image Icon of play button with non-selected form
         JButton backButton = (JButton) e.getSource();
-        try {
-            // load and apply image
-            Image backImage = ImageIO.read(new File("assets\\back.png")).getScaledInstance(100, 100, java.awt.Image.SCALE_SMOOTH);
-            backButton.setIcon(new ImageIcon(backImage));
-        } catch (IOException exception) {
-            // output traced error
-            exception.printStackTrace();
-        }
+        Utils.applyButtonImage(backButton, "assets\\back.png", 100, 100);
     }
 
     public void mouseEntered(MouseEvent e){
         // replace Image Icon of play button with selected form
         JButton backButton = (JButton) e.getSource();
-        try {
-            // load and apply image
-            Image backImage = ImageIO.read(new File("assets\\backSelected.png")).getScaledInstance(100, 100, java.awt.Image.SCALE_SMOOTH);
-			backButton.setIcon(new ImageIcon(backImage));
-        } catch (IOException exception) {
-            // output traced error
-            exception.printStackTrace();
-        }
+        Utils.applyButtonImage(backButton, "assets\\backSelected.png", 100, 100);
     }
 
     public void mouseExited(MouseEvent e){
         // replace Image Icon of play button with non-selected form
         JButton backButton = (JButton) e.getSource();
-        try {
-            // load and apply image
-            Image backImage = ImageIO.read(new File("assets\\back.png")).getScaledInstance(100, 100, java.awt.Image.SCALE_SMOOTH);
-            backButton.setIcon(new ImageIcon(backImage));
-        } catch (IOException exception) {
-            // output traced error
-            exception.printStackTrace();
-        }
+        Utils.applyButtonImage(backButton, "assets\\back.png", 100, 100);
     }
 }

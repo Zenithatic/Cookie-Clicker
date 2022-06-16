@@ -2,6 +2,7 @@ package components;
 import java.awt.*;
 import javax.swing.*;
 import listeners.*;
+import myClasses.Utils;
 import java.io.*;
 import javax.imageio.ImageIO;
 
@@ -28,15 +29,7 @@ public class LoadPanel extends JPanel{
         goBack.setBounds(new Rectangle(0, 0, 100, 100));
 
         // apply image onto the back button
-        try{
-            // get and set image
-            Image backImage = ImageIO.read(new File("assets\\back.png")).getScaledInstance(100, 100, java.awt.Image.SCALE_SMOOTH);
-            goBack.setIcon(new ImageIcon(backImage));
-        }
-        catch (IOException e){
-            // print out traced error
-            e.printStackTrace();
-        }
+        Utils.applyButtonImage(goBack, "assets\\back.png", 100, 100);
         
         // add listener to back button
         goBack.addMouseListener(new BackListener());
@@ -52,15 +45,7 @@ public class LoadPanel extends JPanel{
         load1.setBounds(new Rectangle(25, 300, 300, 150));
         
         // apply image onto the load button
-        try{
-            // get and set image
-            Image loadImage = ImageIO.read(new File("assets\\load.png")).getScaledInstance(300, 150, java.awt.Image.SCALE_SMOOTH);
-            load1.setIcon(new ImageIcon(loadImage));
-        }
-        catch (IOException e){
-            // print out traced error
-            e.printStackTrace();
-        }
+        Utils.applyButtonImage(load1, "assets\\load.png", 300, 150);
         
         // add load1 button
         this.add(load1);
@@ -73,15 +58,7 @@ public class LoadPanel extends JPanel{
         load2.setBounds(new Rectangle(348, 300, 300, 150));
         
         // apply image onto the load button
-        try{
-            // get and set image
-            Image loadImage = ImageIO.read(new File("assets\\load.png")).getScaledInstance(300, 150, java.awt.Image.SCALE_SMOOTH);
-            load2.setIcon(new ImageIcon(loadImage));
-        }
-        catch (IOException e){
-            // print out traced error
-            e.printStackTrace();
-        }
+        Utils.applyButtonImage(load2, "assets\\load.png", 300, 150);
         
         // add load2 button
         this.add(load2);
@@ -94,15 +71,7 @@ public class LoadPanel extends JPanel{
         load3.setBounds(new Rectangle(670, 300, 300, 150));
         
         // apply image onto the load button
-        try{
-            // get and set image
-            Image loadImage = ImageIO.read(new File("assets\\load.png")).getScaledInstance(300, 150, java.awt.Image.SCALE_SMOOTH);
-            load3.setIcon(new ImageIcon(loadImage));
-        }
-        catch (IOException e){
-            // print out traced error
-            e.printStackTrace();
-        }
+        Utils.applyButtonImage(load3, "assets\\load.png", 300, 150);
         
         // add load2 button
         this.add(load3);
@@ -125,15 +94,7 @@ public class LoadPanel extends JPanel{
         reset1.setBounds(new Rectangle(25, 475, 300, 150));
         
         // apply image onto the reset button
-        try{
-            // get and set image
-            Image resetImage = ImageIO.read(new File("assets\\reset.png")).getScaledInstance(300, 150, java.awt.Image.SCALE_SMOOTH);
-            reset1.setIcon(new ImageIcon(resetImage));
-        }
-        catch (IOException e){
-            // print out traced error
-            e.printStackTrace();
-        }
+        Utils.applyButtonImage(reset1, "assets\\reset.png", 300, 150);
         
         // add reset2 button
         this.add(reset1);
@@ -146,15 +107,7 @@ public class LoadPanel extends JPanel{
         reset2.setBounds(new Rectangle(348, 475, 300, 150));
         
         // apply image onto the reset button
-        try{
-            // get and set image
-            Image resetImage = ImageIO.read(new File("assets\\reset.png")).getScaledInstance(300, 150, java.awt.Image.SCALE_SMOOTH);
-            reset2.setIcon(new ImageIcon(resetImage));
-        }
-        catch (IOException e){
-            // print out traced error
-            e.printStackTrace();
-        }
+        Utils.applyButtonImage(reset2, "assets\\reset.png", 300, 150);
         
         // add reset2 button
         this.add(reset2);
@@ -167,15 +120,7 @@ public class LoadPanel extends JPanel{
         reset3.setBounds(new Rectangle(670, 475, 300, 150));
         
         // apply image onto the reset button
-        try{
-            // get and set image
-            Image resetImage = ImageIO.read(new File("assets\\reset.png")).getScaledInstance(300, 150, java.awt.Image.SCALE_SMOOTH);
-            reset3.setIcon(new ImageIcon(resetImage));
-        }
-        catch (IOException e){
-            // print out traced error
-            e.printStackTrace();
-        }
+        Utils.applyButtonImage(reset3, "assets\\reset.png", 300, 150);
         
         // add reset3 button
         this.add(reset3);

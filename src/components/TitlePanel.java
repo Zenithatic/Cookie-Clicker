@@ -2,6 +2,8 @@ package components;
 import java.awt.*;
 import javax.swing.*;
 import listeners.*;
+import myClasses.Utils;
+
 import java.io.*;
 import javax.imageio.ImageIO;
 
@@ -29,15 +31,7 @@ public class TitlePanel extends JPanel{
         start.setBorder(null);
         
         // apply image onto the start button
-        try{
-            // get and set image
-            Image startImage = ImageIO.read(new File("assets\\start.png")).getScaledInstance(400, 200, java.awt.Image.SCALE_SMOOTH);
-            start.setIcon(new ImageIcon(startImage));
-        }
-        catch (IOException e){
-            // print out traced error
-            e.printStackTrace();
-        }
+        Utils.applyButtonImage(start, "assets\\start.png", 400, 200);
         
         // add mouse listener to start button
         start.addMouseListener(new StartListener());

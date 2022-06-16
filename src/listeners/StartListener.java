@@ -1,13 +1,9 @@
 package listeners;
-import javax.imageio.ImageIO;
 import javax.swing.*;
-
 import components.MainFrame;
-
-import java.awt.Image;
 import java.awt.event.*;
-import java.io.*;
 import main_pkg.Main;
+import myClasses.Utils;
 
 /**
  * 
@@ -24,14 +20,7 @@ public class StartListener implements MouseListener{
 	public void mousePressed(MouseEvent e) {
 		// replace Image Icon of start button with non-selected form
         JButton startButton = (JButton) e.getSource();
-        try {
-            // load and apply image
-            Image startImage = ImageIO.read(new File("assets\\start.png")).getScaledInstance(400, 200, java.awt.Image.SCALE_SMOOTH);
-            startButton.setIcon(new ImageIcon(startImage));
-        } catch (IOException exception) {
-            // output traced error
-            exception.printStackTrace();
-        }
+        Utils.applyButtonImage(startButton, "assets\\start.png", 400, 200);
         
         // load home panel
         Main.getMainFrame().setCurrentPanel(MainFrame.HOMEPANEL);
@@ -40,26 +29,12 @@ public class StartListener implements MouseListener{
 	public void mouseEntered(MouseEvent e) {
 		// replace Image Icon of start button with selected form
         JButton startButton = (JButton) e.getSource();
-        try {
-            // load and apply image
-            Image startImage = ImageIO.read(new File("assets\\startSelected.png")).getScaledInstance(400, 200, java.awt.Image.SCALE_SMOOTH);
-            startButton.setIcon(new ImageIcon(startImage));
-        } catch (IOException exception) {
-            // output traced error
-            exception.printStackTrace();
-        }
+        Utils.applyButtonImage(startButton, "assets\\startSelected.png", 400, 200);
 	}
 
 	public void mouseExited(MouseEvent e) {
 		// replace Image Icon of start button with non-selected form
         JButton startButton = (JButton) e.getSource();
-        try {
-            // load and apply image
-            Image startImage = ImageIO.read(new File("assets\\start.png")).getScaledInstance(400, 200, java.awt.Image.SCALE_SMOOTH);
-            startButton.setIcon(new ImageIcon(startImage));
-        } catch (IOException exception) {
-            // output traced error
-            exception.printStackTrace();
-        }
+        Utils.applyButtonImage(startButton, "assets\\start.png", 400, 200);
 	}
 }

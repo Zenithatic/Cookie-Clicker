@@ -2,9 +2,10 @@ package listeners;
 import java.awt.*;
 import java.awt.event.*;
 import java.io.*;
-import javax.imageio.ImageIO;
 import javax.swing.*;
 import main_pkg.Main;
+import myClasses.Utils;
+
 import javax.sound.sampled.*;
 
 /**
@@ -48,18 +49,7 @@ public class BuyListener implements MouseListener{
 	public void mouseClicked(MouseEvent e) {}
 	public void mouseReleased(MouseEvent e) {}
 
-	public void mousePressed(MouseEvent e) {
-		// replace Image Icon of buy button with non-selected form
-        JButton buyButton = (JButton) e.getSource();
-        try {
-            // load and apply image
-            Image buyImage = ImageIO.read(new File("assets\\buy.png")).getScaledInstance(100, 80, java.awt.Image.SCALE_SMOOTH);
-            buyButton.setIcon(new ImageIcon(buyImage));
-        } catch (IOException exception) {
-            // output traced error
-            exception.printStackTrace();
-        }
-        
+	public void mousePressed(MouseEvent e) {      
         // perform buy action
         int currentCookies = Main.getMainFrame().getCookies();
         int price = Main.getMainFrame().getGamePanel().getMultiPrice();
@@ -88,26 +78,12 @@ public class BuyListener implements MouseListener{
 	public void mouseEntered(MouseEvent e) {
 		// replace Image Icon of buy button with selected form
         JButton buyButton = (JButton) e.getSource();
-        try {
-            // load and apply image
-            Image buyImage = ImageIO.read(new File("assets\\buySelected.png")).getScaledInstance(100, 80, java.awt.Image.SCALE_SMOOTH);
-            buyButton.setIcon(new ImageIcon(buyImage));
-        } catch (IOException exception) {
-            // output traced error
-            exception.printStackTrace();
-        }
+        Utils.applyButtonImage(buyButton, "assets\\buySelected.png", 100, 80);
 	}
 
 	public void mouseExited(MouseEvent e) {
 		// replace Image Icon of buy button with non-selected form
         JButton buyButton = (JButton) e.getSource();
-        try {
-            // load and apply image
-            Image buyImage = ImageIO.read(new File("assets\\buy.png")).getScaledInstance(100, 80, java.awt.Image.SCALE_SMOOTH);
-            buyButton.setIcon(new ImageIcon(buyImage));
-        } catch (IOException exception) {
-            // output traced error
-            exception.printStackTrace();
-        }
+        Utils.applyButtonImage(buyButton, "assets\\buy.png", 100, 80);
 	}
 }

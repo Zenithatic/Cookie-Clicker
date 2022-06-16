@@ -1,9 +1,8 @@
 package listeners;
-import java.awt.*;
 import java.awt.event.*;
-import java.io.*;
-import javax.imageio.ImageIO;
 import javax.swing.*;
+
+import myClasses.Utils;
 
 /**
  * 
@@ -24,26 +23,12 @@ public class CloseGameListener implements MouseListener {
     public void mouseEntered(MouseEvent e){
         // replace Image Icon of close button with selected form
         JButton closeButton = (JButton) e.getSource();
-        try {
-            // load and apply image
-            Image closeImage = ImageIO.read(new File("assets\\closeSelected.png")).getScaledInstance(100, 100, java.awt.Image.SCALE_SMOOTH);
-			closeButton.setIcon(new ImageIcon(closeImage));
-        } catch (IOException exception) {
-            // output traced error
-            exception.printStackTrace();
-        }
+        Utils.applyButtonImage(closeButton, "assets\\closeSelected.png", 100, 100);
     }
 
     public void mouseExited(MouseEvent e){
         // replace Image Icon of close button with non-selected form
         JButton closeButton = (JButton) e.getSource();
-        try {
-            // load and apply image
-            Image closeImage = ImageIO.read(new File("assets\\close.png")).getScaledInstance(100, 100, java.awt.Image.SCALE_SMOOTH);
-			closeButton.setIcon(new ImageIcon(closeImage));
-        } catch (IOException exception) {
-            // output traced error
-            exception.printStackTrace();
-        }
+        Utils.applyButtonImage(closeButton, "assets\\close.png", 100, 100);
     }
 }
