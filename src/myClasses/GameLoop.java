@@ -15,7 +15,7 @@ public class GameLoop implements Runnable{
 	@Override
 	public void run() {
 		// run game loop
-		while (true) {
+		while (true) { 
 			// rest for a second
 			try {
 				Thread.sleep(1000);
@@ -27,8 +27,9 @@ public class GameLoop implements Runnable{
 			// calculate cookies to generate
 			int cursorCookies = Main.getMainFrame().getCursors();
 			int grandmaCookies = Main.getMainFrame().getGrandmas() * 3;
+			int farmCookies = Main.getMainFrame().getFarms() * 10;
 			
-			int totalCookies = cursorCookies + grandmaCookies; 
+			int totalCookies = cursorCookies + grandmaCookies + farmCookies; 
 			
 			// add cookies to game
 			Main.getMainFrame().addCookies(totalCookies);

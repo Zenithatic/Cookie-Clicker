@@ -22,9 +22,11 @@ public class GamePanel extends JPanel{
 	private JLabel multiplierPriceLabel;
 	private JLabel cookiesPerSecond;
 	private JLabel upgradeDescription;
+	
 	private int nextMultiPrice = 0;
 	private int nextCursorPrice = 0;
 	private int nextGrandmaPrice = 0;
+	private int nextFarmPrice = 0;
 	
 	/**
 	 * 
@@ -179,6 +181,15 @@ public class GamePanel extends JPanel{
         buyGrandma.addMouseListener(new BuyGrandmaListener());
         this.add(buyGrandma);
         
+        // create buy farm button
+        JButton buyFarm = new JButton();
+        buyFarm.setBounds(new Rectangle(700, 460, 250, 70));
+        buyFarm.setBorder(null);
+        buyFarm.setContentAreaFilled(false);
+        Utils.applyButtonImage(buyFarm, "assets\\buyFarm.png", 250, 70);
+        buyFarm.addMouseListener(new BuyFarmListener());
+        this.add(buyFarm);
+        
 	}
 	
 	/**
@@ -203,6 +214,7 @@ public class GamePanel extends JPanel{
 	 * @apiNote Method to update the cookies per second label
 	 */
 	public void updatePerSec() {
+		// initial value
 		int perSecond = 0;
 		
 		// add cursor value
@@ -213,16 +225,33 @@ public class GamePanel extends JPanel{
 		int grandmas = Main.getMainFrame().getGrandmas();
 		perSecond += grandmas * 3;
 		
+		// add farm value
+		int farms = Main.getMainFrame().getFarms();
+		perSecond += farms * 10;
+		
 		// update JLabel
 		cookiesPerSecond.setText("Per second: " + perSecond + "$");
 	}
 	
+	/**
+	 * @apiNote Method to update the next cursor price
+	 */
 	public void updateCursorPrice() {
 		this.nextCursorPrice = Main.getMainFrame().getCursors() * Main.getMainFrame().getCursors() + 10;
 	}
 	
+	/**
+	 * @apiNote Method to update the next grandma price
+	 */
 	public void updateGrandmaPrice() {
 		this.nextGrandmaPrice = Main.getMainFrame().getGrandmas() * Main.getMainFrame().getGrandmas() + 200;
+	}
+	
+	/**
+	 * @apiNote Method to update the next farm price
+	 */
+	public void updateFarmPrice() {
+		this.nextFarmPrice = Main.getMainFrame().getFarms() * Main.getMainFrame().getFarms() + 1000;
 	}
 	
 	/**
@@ -243,6 +272,16 @@ public class GamePanel extends JPanel{
 	 */
 	public int getCursorPrice() {
 		return this.nextCursorPrice;
+	}
+	
+	/**
+	 * 
+	 * @return the price for the next farm - int
+	 * @apiNote Method that returns the next farm upgrade price
+	 * 
+	 */
+	public int getFarmPrice() {
+		return this.nextFarmPrice;
 	}
 	
 	/**

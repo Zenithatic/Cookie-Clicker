@@ -27,6 +27,7 @@ public class MainFrame extends JFrame{
 	public static final String MULTIPLIER_FILE = "multiplier.txt";
 	public static final String CURSOR_FILE = "cursors.txt";
 	public static final String GRANDMA_FILE = "grandmas.txt";
+	public static final String FARM_FILE = "farms.txt";
 
 	// create global components
 	private HomePanel home;
@@ -43,6 +44,7 @@ public class MainFrame extends JFrame{
 	private int multiplier = 1;
 	private int cursors = 0;
 	private int grandmas = 0;
+	private int farms = 0;
 
 	/**
 	 * 
@@ -55,7 +57,7 @@ public class MainFrame extends JFrame{
 		super(name);
 		this.setResizable(false);
 		this.setDefaultCloseOperation(EXIT_ON_CLOSE);
-		this.setBounds(new Rectangle(50, -50, WIDTH, HEIGHT));
+		this.setBounds(new Rectangle(0, 0, WIDTH, HEIGHT));
 
 		// instantiate the BackgroundMusicPlayer class
 		bmp = new BackgroundMusicPlayer();
@@ -176,6 +178,23 @@ public class MainFrame extends JFrame{
 	public void setGrandmas(int grandmas) {
 		this.grandmas = grandmas;
 	}
+	
+	/**
+	 * @return amount of farms user owns - int
+	 * @apiNote Method that returns the amount of farms in the game
+	 */
+	public int getFarms() {
+		return this.farms;
+	}
+	
+	/**
+	 * 
+	 * @param farms - int
+	 * @apiNote Method to set the amount of farms in the game
+	 */
+	public void setFarms(int farms) {
+		this.farms = farms;
+	}
 
 	/**
 	 * @param int - id 
@@ -294,6 +313,9 @@ public class MainFrame extends JFrame{
 				else if (fileName.equals(GRANDMA_FILE)) {
 					this.grandmas = value;
 				}
+				else if (fileName.equals(FARM_FILE)) {
+					this.farms = value;
+				}
 			}
 		} catch (IOException e2) {
 			// output traced error
@@ -305,6 +327,7 @@ public class MainFrame extends JFrame{
 		game.updateMultiplier(this.multiplier);
 		game.updateCursorPrice();
 		game.updateGrandmaPrice();
+		game.updateFarmPrice();
 		game.updatePerSec();
 	}
 }

@@ -90,6 +90,7 @@ public class BuyCursorListener implements MouseListener{
 		// replace Image Icon of buy button with non-selected form
         JButton buyButton = (JButton) e.getSource();
         Utils.applyButtonImage(buyButton, "assets\\buyCursor.png", 250, 70);
+        
         // hide cursor upgrade info
         Main.getMainFrame().getGamePanel().getDescLabel().setText("");
 	}
