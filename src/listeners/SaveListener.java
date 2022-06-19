@@ -49,6 +49,9 @@ public class SaveListener implements MouseListener{
 				else if (fileName.equals(MainFrame.CURSOR_FILE)) {
 					buffer.write(String.valueOf(Main.getMainFrame().getCursors()));
 				}
+				else if (fileName.equals(MainFrame.GRANDMA_FILE)) {
+					buffer.write(String.valueOf(Main.getMainFrame().getGrandmas()));
+				}
 				
 				// close writers
 				buffer.close();

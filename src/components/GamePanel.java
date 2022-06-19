@@ -24,6 +24,7 @@ public class GamePanel extends JPanel{
 	private JLabel upgradeDescription;
 	private int nextMultiPrice = 0;
 	private int nextCursorPrice = 0;
+	private int nextGrandmaPrice = 0;
 	
 	/**
 	 * 
@@ -168,7 +169,16 @@ public class GamePanel extends JPanel{
         Utils.applyButtonImage(buyCursor, "assets\\buyCursor.png", 250, 70);
         buyCursor.addMouseListener(new BuyCursorListener());
         this.add(buyCursor);
-       
+        
+        // create buy grandma button
+        JButton buyGrandma = new JButton();
+        buyGrandma.setBounds(new Rectangle(700, 380, 250, 70));
+        buyGrandma.setBorder(null);
+        buyGrandma.setContentAreaFilled(false);
+        Utils.applyButtonImage(buyGrandma, "assets\\buyGrandma.png", 250, 70);
+        buyGrandma.addMouseListener(new BuyGrandmaListener());
+        this.add(buyGrandma);
+        
 	}
 	
 	/**
@@ -199,12 +209,20 @@ public class GamePanel extends JPanel{
 		int cursors = Main.getMainFrame().getCursors();
 		perSecond += cursors * 1;
 		
+		// add grandma value
+		int grandmas = Main.getMainFrame().getGrandmas();
+		perSecond += grandmas * 5;
+		
 		// update JLabel
 		cookiesPerSecond.setText("Per second: " + perSecond + "$");
 	}
 	
 	public void updateCursorPrice() {
-		this.nextCursorPrice = (int) Math.round(Main.getMainFrame().getCursors() * Main.getMainFrame().getCursors()) + 10;
+		this.nextCursorPrice = Main.getMainFrame().getCursors() * Main.getMainFrame().getCursors() + 10;
+	}
+	
+	public void updateGrandmaPrice() {
+		this.nextGrandmaPrice = Main.getMainFrame().getGrandmas() * Main.getMainFrame().getGrandmas() + 200;
 	}
 	
 	/**
@@ -225,6 +243,16 @@ public class GamePanel extends JPanel{
 	 */
 	public int getCursorPrice() {
 		return this.nextCursorPrice;
+	}
+	
+	/**
+	 * 
+	 * @return the price for the next grandma - int
+	 * @apiNote Method that returns the next grandma upgrade price
+	 * 
+	 */
+	public int getGrandmaPrice() {
+		return this.nextGrandmaPrice;
 	}
 	
 	/**

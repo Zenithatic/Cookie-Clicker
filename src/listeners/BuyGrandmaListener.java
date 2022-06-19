@@ -13,7 +13,7 @@ import javax.sound.sampled.*;
  * @apiNote The custom MouseListener for the Buy Cursor button
  *
  */
-public class BuyCursorListener implements MouseListener{
+public class BuyGrandmaListener implements MouseListener{
 	
 	// declare sound variables
     public static String soundPath = "assets\\kaching.wav";
@@ -25,7 +25,7 @@ public class BuyCursorListener implements MouseListener{
      * @apiNote Constructor for the MouseListener class
      * 
      */
-    public BuyCursorListener() {
+    public BuyGrandmaListener() {
     	// load up audio stream and clip
         try {
 			inputStream = AudioSystem.getAudioInputStream(new File(soundPath).getAbsoluteFile());
@@ -51,17 +51,17 @@ public class BuyCursorListener implements MouseListener{
 	public void mousePressed(MouseEvent e) {
 		// perform buy action
         int currentCookies = Main.getMainFrame().getCookies();
-        int price = Main.getMainFrame().getGamePanel().getCursorPrice();
+        int price = Main.getMainFrame().getGamePanel().getGrandmaPrice();
         
         if (currentCookies >= price) {
         	// set new values
-        	Main.getMainFrame().setCursors(Main.getMainFrame().getCursors() + 1);
+        	Main.getMainFrame().setGrandmas(Main.getMainFrame().getGrandmas() + 1);
         	Main.getMainFrame().subtractCookies(price);
-        	Main.getMainFrame().getGamePanel().updateCursorPrice();
+        	Main.getMainFrame().getGamePanel().updateGrandmaPrice();
         	
         	// update game panel labels
         	Main.getMainFrame().getGamePanel().updateCookies(currentCookies - price);
-        	Main.getMainFrame().getGamePanel().getDescLabel().setText("<html><b><u>Cursor</u></b><br><br>Clicks 1 cookie per second<br><br>Owned: " + Main.getMainFrame().getCursors() + "<br>Next price: $" + Main.getMainFrame().getGamePanel().getCursorPrice() + "</html>");
+        	Main.getMainFrame().getGamePanel().getDescLabel().setText("<html><b><u>Grandma</u></b><br><br>Bakes 5 cookies per second<br><br>Owned: " + Main.getMainFrame().getGrandmas() + "<br>Next price: $" + Main.getMainFrame().getGamePanel().getGrandmaPrice() + "</html>");
         	
             // play kaching audio
             audioClip.stop();
@@ -80,16 +80,16 @@ public class BuyCursorListener implements MouseListener{
 	public void mouseEntered(MouseEvent e) {
 		// replace Image Icon of buy button with selected form
         JButton buyButton = (JButton) e.getSource();
-        Utils.applyButtonImage(buyButton, "assets\\buyCursorSelected.png", 250, 70);
+        Utils.applyButtonImage(buyButton, "assets\\buyGrandmaSelected.png", 250, 70);
         
         // show cursor upgrade info
-        Main.getMainFrame().getGamePanel().getDescLabel().setText("<html><b><u>Cursor</u></b><br><br>Clicks 1 cookie per second<br><br>Owned: " + Main.getMainFrame().getCursors() + "<br>Next price: $" + Main.getMainFrame().getGamePanel().getCursorPrice() + "</html>");
+        Main.getMainFrame().getGamePanel().getDescLabel().setText("<html><b><u>Grandma</u></b><br><br>Bakes 5 cookies per second<br><br>Owned: " + Main.getMainFrame().getGrandmas() + "<br>Next price: $" + Main.getMainFrame().getGamePanel().getGrandmaPrice() + "</html>");
 	}
 
 	public void mouseExited(MouseEvent e) {
 		// replace Image Icon of buy button with non-selected form
         JButton buyButton = (JButton) e.getSource();
-        Utils.applyButtonImage(buyButton, "assets\\buyCursor.png", 250, 70);
+        Utils.applyButtonImage(buyButton, "assets\\buyGrandma.png", 250, 70);
         // hide cursor upgrade info
         Main.getMainFrame().getGamePanel().getDescLabel().setText("");
 	}

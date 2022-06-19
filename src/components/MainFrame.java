@@ -26,6 +26,7 @@ public class MainFrame extends JFrame{
 	public static final String COOKIE_FILE = "cookies.txt";
 	public static final String MULTIPLIER_FILE = "multiplier.txt";
 	public static final String CURSOR_FILE = "cursors.txt";
+	public static final String GRANDMA_FILE = "grandmas.txt";
 
 	// create global components
 	private HomePanel home;
@@ -41,6 +42,7 @@ public class MainFrame extends JFrame{
 	private int cookies = 0;
 	private int multiplier = 1;
 	private int cursors = 0;
+	private int grandmas = 0;
 
 	/**
 	 * 
@@ -157,6 +159,23 @@ public class MainFrame extends JFrame{
 	public void setCursors(int cursors) {
 		this.cursors = cursors;
 	}
+	
+	/**
+	 * @return amount of grandmas user owns - int
+	 * @apiNote Method that returns the amount of grandmas in the game
+	 */
+	public int getGrandmas() {
+		return this.grandmas;
+	}
+	
+	/**
+	 * 
+	 * @param grandmas - int
+	 * @apiNote Method to set the amount of grandmas in the game
+	 */
+	public void setGrandmas(int grandmas) {
+		this.grandmas = grandmas;
+	}
 
 	/**
 	 * @param int - id 
@@ -272,6 +291,9 @@ public class MainFrame extends JFrame{
 				else if (fileName.equals(CURSOR_FILE)) {
 					this.cursors = value;
 				}
+				else if (fileName.equals(GRANDMA_FILE)) {
+					this.grandmas = value;
+				}
 			}
 		} catch (IOException e2) {
 			// output traced error
@@ -281,8 +303,8 @@ public class MainFrame extends JFrame{
 		// update data
 		game.updateCookies(this.cookies);
 		game.updateMultiplier(this.multiplier);
-		game.updatePerSec();
 		game.updateCursorPrice();
+		game.updateGrandmaPrice();
 		game.updatePerSec();
 	}
 }

@@ -26,7 +26,9 @@ public class GameLoop implements Runnable{
 			
 			// calculate cookies to generate
 			int cursorCookies = Main.getMainFrame().getCursors();
-			int totalCookies = cursorCookies; // add more soon
+			int grandmaCookies = Main.getMainFrame().getGrandmas() * 5;
+			
+			int totalCookies = cursorCookies + grandmaCookies; 
 			
 			// add cookies to game
 			Main.getMainFrame().addCookies(totalCookies);
