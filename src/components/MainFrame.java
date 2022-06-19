@@ -25,6 +25,7 @@ public class MainFrame extends JFrame{
 	// file name IDS for the loadSlot() method
 	public static final String COOKIE_FILE = "cookies.txt";
 	public static final String MULTIPLIER_FILE = "multiplier.txt";
+	public static final String CURSOR_FILE = "cursors.txt";
 
 	// create global components
 	private HomePanel home;
@@ -39,6 +40,7 @@ public class MainFrame extends JFrame{
 	private int currentSlot = 0;
 	private int cookies = 0;
 	private int multiplier = 1;
+	private int cursors = 0;
 
 	/**
 	 * 
@@ -93,6 +95,10 @@ public class MainFrame extends JFrame{
 
 		// set the frame to visible
 		this.setVisible(true);
+		
+		// start game loop
+		Thread gameLoop = new Thread(new GameLoop());
+		gameLoop.start();
 	}
 
 	/**
@@ -133,6 +139,23 @@ public class MainFrame extends JFrame{
 	 */
 	public void subtractCookies(int cookies) {
 		this.cookies -= cookies;
+	}
+	
+	/**
+	 * @return amount of cursors user owns - int
+	 * @apiNote Method that returns the amount of cursors in the game
+	 */
+	public int getCursors() {
+		return this.cursors;
+	}
+	
+	/**
+	 * 
+	 * @param cursors - int
+	 * @apiNote Method to set the amount of cursors in the game
+	 */
+	public void setCursors(int cursors) {
+		this.cursors = cursors;
 	}
 
 	/**
@@ -246,6 +269,9 @@ public class MainFrame extends JFrame{
 				else if (fileName.equals(MULTIPLIER_FILE)) {
 					this.multiplier = value;
 				}
+				else if (fileName.equals(CURSOR_FILE)) {
+					this.cursors = value;
+				}
 			}
 		} catch (IOException e2) {
 			// output traced error
@@ -255,5 +281,8 @@ public class MainFrame extends JFrame{
 		// update data
 		game.updateCookies(this.cookies);
 		game.updateMultiplier(this.multiplier);
+		game.updatePerSec();
+		game.updateCursorPrice();
+		game.updatePerSec();
 	}
 }

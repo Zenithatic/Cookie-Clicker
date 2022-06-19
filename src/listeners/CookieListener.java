@@ -55,7 +55,7 @@ public class CookieListener implements MouseListener{
         Utils.applyButtonImage(cookieButton, "assets\\cookieClicked.png", 270, 270);
     
         // set cookie size smaller
-        cookieButton.setBounds(new Rectangle(360, 145, 270, 270));
+        cookieButton.setBounds(new Rectangle(360, 210, 270, 270));
         
         // add a cookie to the game
         Main.getMainFrame().addCookies(1 * Main.getMainFrame().getMultiplier());
@@ -74,7 +74,7 @@ public class CookieListener implements MouseListener{
 
           
         // set cookie size back to normal
-        cookieButton.setBounds(new Rectangle(345, 130, 300, 300));
+        cookieButton.setBounds(new Rectangle(345, 200, 300, 300));
         
         // reset audio clip
         audioClip.setFramePosition(0);

@@ -1,9 +1,12 @@
 package components;
 import java.awt.*;
 import java.io.*;
+import java.security.UnresolvedPermission;
+
 import javax.imageio.ImageIO;
 import javax.swing.*;
 import listeners.*;
+import main_pkg.Main;
 import myClasses.Utils;
 
 /**
@@ -17,7 +20,10 @@ public class GamePanel extends JPanel{
 	private JLabel cookieCount;
 	private JLabel multiplierLabel;
 	private JLabel multiplierPriceLabel;
+	private JLabel cookiesPerSecond;
+	private JLabel upgradeDescription;
 	private int nextMultiPrice = 0;
+	private int nextCursorPrice = 0;
 	
 	/**
 	 * 
@@ -44,7 +50,7 @@ public class GamePanel extends JPanel{
         
         // create cookie button
         JButton cookie = new JButton();
-        cookie.setBounds(new Rectangle(345, 130, 300, 300));
+        cookie.setBounds(new Rectangle(345, 200, 300, 300));
         cookie.setContentAreaFilled(false);
         cookie.setBorder(null);
         
@@ -133,28 +139,72 @@ public class GamePanel extends JPanel{
         
         // add buy button to panel
         this.add(buyMulti);
+        
+        
+        // create cookies per sec label
+        cookiesPerSecond = new JLabel("Per second: ");
+        cookiesPerSecond.setBounds(new Rectangle(370, 120, 250, 70));
+        cookiesPerSecond.setHorizontalTextPosition(SwingConstants.CENTER);
+        cookiesPerSecond.setFont(new Font("Showcard Gothic", Font.PLAIN, 20));
+        cookiesPerSecond.setForeground(Color.BLACK);
+        Utils.applyLabelImage(cookiesPerSecond, "assets\\sign.png", 250, 70);
+        
+        this.add(cookiesPerSecond);
+        
+        // add description of upgrade panel
+        upgradeDescription = new JLabel();
+        upgradeDescription.setBounds(new Rectangle(700, 50, 250, 250));
+        upgradeDescription.setForeground(Color.WHITE);
+        upgradeDescription.setFont(new Font("Comic Sans MS", Font.PLAIN, 22));
+        upgradeDescription.setOpaque(false);
+        upgradeDescription.setVerticalAlignment(SwingConstants.TOP);
+        this.add(upgradeDescription);
+        
+        // create buy cursor button
+        JButton buyCursor = new JButton();
+        buyCursor.setBounds(new Rectangle(700, 300, 250, 70));
+        buyCursor.setBorder(null);
+        buyCursor.setContentAreaFilled(false);
+        Utils.applyButtonImage(buyCursor, "assets\\buyCursor.png", 250, 70);
+        buyCursor.addMouseListener(new BuyCursorListener());
+        this.add(buyCursor);
+       
 	}
 	
 	/**
-	 * 
 	 * @param cookies - int
 	 * @apiNote Method that the cookie count JPanel to the new amount of cookies
-	 * 
 	 */
 	public void updateCookies(int cookies) {
 		this.cookieCount.setText(String.valueOf(cookies) + "$");
 	}
 	
 	/**
-	 * 
 	 * @param multiplier - int
 	 * @apiNote Method that updates the multiplier label and price tag
-	 * 
 	 */
 	public void updateMultiplier(int multiplier) {
 		this.multiplierLabel.setText("Click Multiplier: " + multiplier + "x");
 		this.nextMultiPrice = (multiplier + 1) * (multiplier) * 10;
 		this.multiplierPriceLabel.setText("Upgrade: " + this.nextMultiPrice + "$");
+	}
+	
+	/**
+	 * @apiNote Method to update the cookies per second label
+	 */
+	public void updatePerSec() {
+		int perSecond = 0;
+		
+		// add cursor value
+		int cursors = Main.getMainFrame().getCursors();
+		perSecond += cursors * 1;
+		
+		// update JLabel
+		cookiesPerSecond.setText("Per second: " + perSecond + "$");
+	}
+	
+	public void updateCursorPrice() {
+		this.nextCursorPrice = (int) Math.round(Main.getMainFrame().getCursors() * Main.getMainFrame().getCursors()) + 10;
 	}
 	
 	/**
@@ -165,6 +215,26 @@ public class GamePanel extends JPanel{
 	 */
 	public int getMultiPrice() {
 		return this.nextMultiPrice;
+	}
+	
+	/**
+	 * 
+	 * @return the price for the next cursor - int
+	 * @apiNote Method that returns the next cursor upgrade price
+	 * 
+	 */
+	public int getCursorPrice() {
+		return this.nextCursorPrice;
+	}
+	
+	/**
+	 * 
+	 * @return upgrade description label - JLabel
+	 * @apiNote Method that returns the upgrade desc JLabel
+	 * 
+	 */
+	public JLabel getDescLabel() {
+		return this.upgradeDescription;
 	}
 	
 	
