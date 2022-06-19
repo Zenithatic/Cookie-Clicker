@@ -61,7 +61,7 @@ public class BuyGrandmaListener implements MouseListener{
         	
         	// update game panel labels
         	Main.getMainFrame().getGamePanel().updateCookies(currentCookies - price);
-        	Main.getMainFrame().getGamePanel().getDescLabel().setText("<html><b><u>Grandma</u></b><br><br>Bakes 5 cookies per second<br><br>Owned: " + Main.getMainFrame().getGrandmas() + "<br>Next price: $" + Main.getMainFrame().getGamePanel().getGrandmaPrice() + "</html>");
+        	Main.getMainFrame().getGamePanel().getDescLabel().setText("<html><b><u>Grandma</u></b><br><br>Bakes 3 cookies per second<br><br>Owned: " + Main.getMainFrame().getGrandmas() + "<br>Next price: $" + Main.getMainFrame().getGamePanel().getGrandmaPrice() + "</html>");
         	
             // play kaching audio
             audioClip.stop();
@@ -83,7 +83,7 @@ public class BuyGrandmaListener implements MouseListener{
         Utils.applyButtonImage(buyButton, "assets\\buyGrandmaSelected.png", 250, 70);
         
         // show cursor upgrade info
-        Main.getMainFrame().getGamePanel().getDescLabel().setText("<html><b><u>Grandma</u></b><br><br>Bakes 5 cookies per second<br><br>Owned: " + Main.getMainFrame().getGrandmas() + "<br>Next price: $" + Main.getMainFrame().getGamePanel().getGrandmaPrice() + "</html>");
+        Main.getMainFrame().getGamePanel().getDescLabel().setText("<html><b><u>Grandma</u></b><br><br>Bakes 3 cookies per second<br><br>Owned: " + Main.getMainFrame().getGrandmas() + "<br>Next price: $" + Main.getMainFrame().getGamePanel().getGrandmaPrice() + "</html>");
 	}
 
 	public void mouseExited(MouseEvent e) {

@@ -211,7 +211,7 @@ public class GamePanel extends JPanel{
 		
 		// add grandma value
 		int grandmas = Main.getMainFrame().getGrandmas();
-		perSecond += grandmas * 5;
+		perSecond += grandmas * 3;
 		
 		// update JLabel
 		cookiesPerSecond.setText("Per second: " + perSecond + "$");
