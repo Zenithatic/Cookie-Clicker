@@ -3,7 +3,6 @@ import java.awt.*;
 import javax.swing.*;
 import listeners.BackListener;
 import myClasses.Utils;
-
 import java.io.*;
 import javax.imageio.ImageIO;
 
@@ -30,7 +29,7 @@ public class HelpPanel extends JPanel{
         goBack.setBounds(new Rectangle(0, 0, 100, 100));
 
         // apply image onto the back button
-        Utils.applyButtonImage(goBack, "assets\\\\back.png", 100, 100);
+        Utils.applyButtonImage(goBack, "assets\\back.png", 100, 100);
         
         // add listener to back button
         goBack.addMouseListener(new BackListener());

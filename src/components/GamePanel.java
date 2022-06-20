@@ -1,8 +1,6 @@
 package components;
 import java.awt.*;
 import java.io.*;
-import java.security.UnresolvedPermission;
-
 import javax.imageio.ImageIO;
 import javax.swing.*;
 import listeners.*;
@@ -27,6 +25,7 @@ public class GamePanel extends JPanel{
 	private int nextCursorPrice = 0;
 	private int nextGrandmaPrice = 0;
 	private int nextFarmPrice = 0;
+	private int nextMinePrice = 0;
 	
 	/**
 	 * 
@@ -190,6 +189,16 @@ public class GamePanel extends JPanel{
         buyFarm.addMouseListener(new BuyFarmListener());
         this.add(buyFarm);
         
+        // create buy mine button
+        JButton buyMine = new JButton();
+        buyMine.setBounds(new Rectangle(700, 540, 250, 70));
+        buyMine.setBorder(null);
+        buyMine.setContentAreaFilled(false);
+        Utils.applyButtonImage(buyMine, "assets\\buyMine.png", 250, 70);
+        buyMine.addMouseListener(new BuyMineListener());
+        this.add(buyMine);
+        
+        
 	}
 	
 	/**
@@ -229,6 +238,11 @@ public class GamePanel extends JPanel{
 		int farms = Main.getMainFrame().getFarms();
 		perSecond += farms * 10;
 		
+		// add mine value
+		int mines = Main.getMainFrame().getMines();
+		perSecond += mines * 50;
+		
+		
 		// update JLabel
 		cookiesPerSecond.setText("Per second: " + perSecond + "$");
 	}
@@ -252,6 +266,13 @@ public class GamePanel extends JPanel{
 	 */
 	public void updateFarmPrice() {
 		this.nextFarmPrice = Main.getMainFrame().getFarms() * Main.getMainFrame().getFarms() + 1000;
+	}
+	
+	/**
+	 * @apiNote Method to update the next mine price
+	 */
+	public void updateMinePrice() {
+		this.nextMinePrice = Main.getMainFrame().getMines() * Main.getMainFrame().getMines() + 5000;
 	}
 	
 	/**
@@ -292,6 +313,16 @@ public class GamePanel extends JPanel{
 	 */
 	public int getGrandmaPrice() {
 		return this.nextGrandmaPrice;
+	}
+	
+	/**
+	 * 
+	 * @return the price for the next mine - int
+	 * @apiNote Method that returns the next mine upgrade price
+	 * 
+	 */
+	public int getMinePrice() {
+		return this.nextMinePrice;
 	}
 	
 	/**

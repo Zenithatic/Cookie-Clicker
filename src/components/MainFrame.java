@@ -28,6 +28,7 @@ public class MainFrame extends JFrame{
 	public static final String CURSOR_FILE = "cursors.txt";
 	public static final String GRANDMA_FILE = "grandmas.txt";
 	public static final String FARM_FILE = "farms.txt";
+	public static final String MINE_FILE = "mines.txt";
 
 	// create global components
 	private HomePanel home;
@@ -45,6 +46,7 @@ public class MainFrame extends JFrame{
 	private int cursors = 0;
 	private int grandmas = 0;
 	private int farms = 0;
+	private int mines = 0;
 
 	/**
 	 * 
@@ -195,6 +197,23 @@ public class MainFrame extends JFrame{
 	public void setFarms(int farms) {
 		this.farms = farms;
 	}
+	
+	/**
+	 * @return amount of mines user owns - int
+	 * @apiNote Method that returns the amount of mines in the game
+	 */
+	public int getMines() {
+		return this.mines;
+	}
+	
+	/**
+	 * 
+	 * @param farms - int
+	 * @apiNote Method to set the amount of farms in the game
+	 */
+	public void setMines(int mines) {
+		this.mines = mines;
+	}
 
 	/**
 	 * @param int - id 
@@ -316,6 +335,9 @@ public class MainFrame extends JFrame{
 				else if (fileName.equals(FARM_FILE)) {
 					this.farms = value;
 				}
+				else if (fileName.equals(MINE_FILE)) {
+					this.mines = value;
+				}
 			}
 		} catch (IOException e2) {
 			// output traced error
@@ -328,6 +350,7 @@ public class MainFrame extends JFrame{
 		game.updateCursorPrice();
 		game.updateGrandmaPrice();
 		game.updateFarmPrice();
+		game.updateMinePrice();
 		game.updatePerSec();
 	}
 }

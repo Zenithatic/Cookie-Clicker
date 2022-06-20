@@ -4,7 +4,6 @@ import javax.swing.*;
 import java.io.*;
 import javax.imageio.ImageIO;
 import listeners.*;
-import main_pkg.Main;
 import myClasses.Utils;
 
 /**
