@@ -29,6 +29,7 @@ public class MainFrame extends JFrame{
 	public static final String GRANDMA_FILE = "grandmas.txt";
 	public static final String FARM_FILE = "farms.txt";
 	public static final String MINE_FILE = "mines.txt";
+	public static final String FACTORY_FILE = "factories.txt";
 
 	// create global components
 	private HomePanel home;
@@ -47,6 +48,7 @@ public class MainFrame extends JFrame{
 	private int grandmas = 0;
 	private int farms = 0;
 	private int mines = 0;
+	private int factories = 0;
 
 	/**
 	 * 
@@ -214,6 +216,26 @@ public class MainFrame extends JFrame{
 	public void setMines(int mines) {
 		this.mines = mines;
 	}
+	
+	/**
+	 * 
+	 * @return amount of factories user owns - int
+	 * @apiNote Method that returns the amount of mines in the game
+	 * 
+	 */
+	public int getFactories() {
+		return this.factories;
+	}
+	
+	/**
+	 * 
+	 * @param factories - int
+	 * @apiNote Method to set the amount of factories in the game
+	 * 
+	 */
+	public void setFactories(int factories) {
+		this.factories = factories;
+	}
 
 	/**
 	 * @param int - id 
@@ -338,6 +360,9 @@ public class MainFrame extends JFrame{
 				else if (fileName.equals(MINE_FILE)) {
 					this.mines = value;
 				}
+				else if (fileName.equals(FACTORY_FILE)) {
+					this.factories = value;
+				}
 			}
 		} catch (IOException e2) {
 			// output traced error
@@ -352,5 +377,6 @@ public class MainFrame extends JFrame{
 		game.updateFarmPrice();
 		game.updateMinePrice();
 		game.updatePerSec();
+		game.updateFactoryPrice();
 	}
 }

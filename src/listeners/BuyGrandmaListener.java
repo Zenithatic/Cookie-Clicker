@@ -10,7 +10,7 @@ import javax.sound.sampled.*;
 /**
  * 
  * @author Patrick Wang, Andrew Yoo
- * @apiNote The custom MouseListener for the Buy Cursor button
+ * @apiNote The custom MouseListener for the Buy Grandma button
  *
  */
 public class BuyGrandmaListener implements MouseListener{

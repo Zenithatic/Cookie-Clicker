@@ -7,6 +7,12 @@ import main_pkg.Main;
 import myClasses.Utils;
 import javax.sound.sampled.*;
 
+/**
+ * 
+ * @author Patrick Wang, Andrew Yoo
+ * @apiNote The custom MouseListener for the Buy Mine button
+ *
+ */
 public class BuyMineListener implements MouseListener{
 
 	// declare sound variables

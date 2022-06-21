@@ -58,6 +58,9 @@ public class SaveExitListener implements MouseListener{
 				else if (fileName.equals(MainFrame.MINE_FILE)) {
 					buffer.write(String.valueOf(Main.getMainFrame().getMines()));
 				}
+				else if (fileName.equals(MainFrame.FACTORY_FILE)) {
+					buffer.write(String.valueOf(Main.getMainFrame().getFactories()));
+				}
 				
 				// close writers
 				buffer.close();

@@ -26,6 +26,7 @@ public class GamePanel extends JPanel{
 	private int nextGrandmaPrice = 0;
 	private int nextFarmPrice = 0;
 	private int nextMinePrice = 0;
+	private int nextFactoryPrice = 0;
 	
 	/**
 	 * 
@@ -198,7 +199,14 @@ public class GamePanel extends JPanel{
         buyMine.addMouseListener(new BuyMineListener());
         this.add(buyMine);
         
-        
+        // create buy factory button
+        JButton buyFactory = new JButton();
+        buyFactory.setBounds(new Rectangle(700, 620, 250, 70));
+        buyFactory.setBorder(null);
+        buyFactory.setContentAreaFilled(false);
+        Utils.applyButtonImage(buyFactory, "assets\\buyFactory.png", 250, 70);
+        buyFactory.addMouseListener(new BuyFactoryListener());
+        this.add(buyFactory);
 	}
 	
 	/**
@@ -242,6 +250,10 @@ public class GamePanel extends JPanel{
 		int mines = Main.getMainFrame().getMines();
 		perSecond += mines * 50;
 		
+		// add factory value
+		int factories = Main.getMainFrame().getFactories();
+		perSecond += factories * 250;
+		
 		
 		// update JLabel
 		cookiesPerSecond.setText("Per second: " + perSecond + "$");
@@ -274,6 +286,14 @@ public class GamePanel extends JPanel{
 	public void updateMinePrice() {
 		this.nextMinePrice = Main.getMainFrame().getMines() * Main.getMainFrame().getMines() + 5000;
 	}
+	
+	/**
+	 * @apiNote Method to update the next mine price
+	 */
+	public void updateFactoryPrice() {
+		this.nextFactoryPrice = Main.getMainFrame().getFactories() * Main.getMainFrame().getFactories() + 25000;
+	}
+	
 	
 	/**
 	 * 
@@ -323,6 +343,16 @@ public class GamePanel extends JPanel{
 	 */
 	public int getMinePrice() {
 		return this.nextMinePrice;
+	}
+	
+	/**
+	 * 
+	 * @return the price for the next factory - int
+	 * @apiNote Method that returns the next factory upgrade price
+	 * 
+	 */
+	public int getFactoryPrice() {
+		return this.nextFactoryPrice;
 	}
 	
 	/**

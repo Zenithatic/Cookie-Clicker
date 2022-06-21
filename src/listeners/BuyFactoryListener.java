@@ -10,11 +10,11 @@ import javax.sound.sampled.*;
 /**
  * 
  * @author Patrick Wang, Andrew Yoo
- * @apiNote The custom MouseListener for the Buy Farm button
+ * @apiNote The custom MouseListener for the Buy Mine button
  *
  */
-public class BuyFarmListener implements MouseListener{
-	
+public class BuyFactoryListener implements MouseListener{
+
 	// declare sound variables
     public static String soundPath = "assets\\kaching.wav";
     private Clip audioClip;
@@ -25,7 +25,7 @@ public class BuyFarmListener implements MouseListener{
      * @apiNote Constructor for the MouseListener class
      * 
      */
-    public BuyFarmListener() {
+    public BuyFactoryListener() {
     	// load up audio stream and clip
         try {
 			inputStream = AudioSystem.getAudioInputStream(new File(soundPath).getAbsoluteFile());
@@ -40,7 +40,7 @@ public class BuyFarmListener implements MouseListener{
             e.printStackTrace();
         }
         catch (LineUnavailableException e){
-            System.out.println("LineUnavailableException occured in the BuyFarmListener class!");
+            System.out.println("LineUnavailableException occured in the BuyFactoryListener class!");
         }
     }
 
@@ -51,17 +51,17 @@ public class BuyFarmListener implements MouseListener{
 	public void mousePressed(MouseEvent e) {
 		// perform buy action
         int currentCookies = Main.getMainFrame().getCookies();
-        int price = Main.getMainFrame().getGamePanel().getFarmPrice();
+        int price = Main.getMainFrame().getGamePanel().getFactoryPrice();
         
         if (currentCookies >= price) {
         	// set new values
-        	Main.getMainFrame().setFarms(Main.getMainFrame().getFarms() + 1);
+        	Main.getMainFrame().setFactories(Main.getMainFrame().getFactories() + 1);
         	Main.getMainFrame().subtractCookies(price);
-        	Main.getMainFrame().getGamePanel().updateFarmPrice();
+        	Main.getMainFrame().getGamePanel().updateFactoryPrice();
         	
         	// update game panel labels
         	Main.getMainFrame().getGamePanel().updateCookies(currentCookies - price);
-        	Main.getMainFrame().getGamePanel().getDescLabel().setText("<html><b><u>Farm</u></b><br><br>Farms 10 cookies per second<br><br>Owned: " + Main.getMainFrame().getFarms() + "<br>Next price: $" + Main.getMainFrame().getGamePanel().getFarmPrice() + "</html>");
+            Main.getMainFrame().getGamePanel().getDescLabel().setText("<html><b><u>Factory</u></b><br><br>Produces 250 cookies per second<br><br>Owned: " + Main.getMainFrame().getFactories() + "<br>Next price: $" + Main.getMainFrame().getGamePanel().getFactoryPrice() + "</html>");
         	
             // play kaching audio
             audioClip.stop();
@@ -80,16 +80,16 @@ public class BuyFarmListener implements MouseListener{
 	public void mouseEntered(MouseEvent e) {
 		// replace Image Icon of buy button with selected form
         JButton buyButton = (JButton) e.getSource();
-        Utils.applyButtonImage(buyButton, "assets\\buyFarmSelected.png", 250, 70);
+        Utils.applyButtonImage(buyButton, "assets\\buyFactorySelected.png", 250, 70);
         
         // show cursor upgrade info
-        Main.getMainFrame().getGamePanel().getDescLabel().setText("<html><b><u>Farm</u></b><br><br>Farms 10 cookies per second<br><br>Owned: " + Main.getMainFrame().getFarms() + "<br>Next price: $" + Main.getMainFrame().getGamePanel().getFarmPrice() + "</html>");
+        Main.getMainFrame().getGamePanel().getDescLabel().setText("<html><b><u>Factory</u></b><br><br>Produces 250 cookies per second<br><br>Owned: " + Main.getMainFrame().getFactories() + "<br>Next price: $" + Main.getMainFrame().getGamePanel().getFactoryPrice() + "</html>");
 	}
 
 	public void mouseExited(MouseEvent e) {
 		// replace Image Icon of buy button with non-selected form
         JButton buyButton = (JButton) e.getSource();
-        Utils.applyButtonImage(buyButton, "assets\\buyFarm.png", 250, 70);
+        Utils.applyButtonImage(buyButton, "assets\\buyFactory.png", 250, 70);
         
         // hide cursor upgrade info
         Main.getMainFrame().getGamePanel().getDescLabel().setText("");
