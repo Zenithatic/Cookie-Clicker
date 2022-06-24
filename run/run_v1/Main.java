@@ -3,7 +3,7 @@
 /**
  * 
  * @author Patrick Wang, Andrew Yoo
- * @apiNote Main class where everything starts and is initialized.
+ *  Main class where everything starts and is initialized.
  * 
  */
 public class Main {
@@ -13,7 +13,7 @@ public class Main {
 	
 	/**
 	 * 
-	 * @apiNote Main method to intialize the entire program
+	 *  Main method to intialize the entire program
 	 * 
 	 */
 	public static void main(String[] args) {
@@ -24,7 +24,7 @@ public class Main {
 	
 	/**
 	 * 
-	 * @apiNote Constructor for the HomePanel component
+	 *  Constructor for the HomePanel component
 	 * @return MainFrame for the game
 	 *
 	 */

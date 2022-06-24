@@ -8,14 +8,14 @@ import myClasses.Utils;
 
 /**
  * 
+ * The JPanel subclass for the settings page
  * @author Patrick Wang, Andrew Yoo
- * @apiNote the JPanel subclass for the settings page
  * 
  */
 public class SettingsPanel extends JPanel{
     /**
      * 
-     * @apiNote Constructor for the SettingsPanel component
+     *  Constructor for the SettingsPanel component
      * 
      */
     public SettingsPanel(){

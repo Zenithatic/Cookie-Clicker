@@ -9,8 +9,8 @@ import javax.sound.sampled.*;
 
 /**
  * 
+ * The custom MouseListener for the Buy Grandma button
  * @author Patrick Wang, Andrew Yoo
- * @apiNote The custom MouseListener for the Buy Grandma button
  *
  */
 public class BuyGrandmaListener implements MouseListener{
@@ -22,7 +22,7 @@ public class BuyGrandmaListener implements MouseListener{
     
     /**
      * 
-     * @apiNote Constructor for the MouseListener class
+     *  Constructor for the MouseListener class
      * 
      */
     public BuyGrandmaListener() {

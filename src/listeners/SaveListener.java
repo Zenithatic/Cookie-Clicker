@@ -8,8 +8,8 @@ import myClasses.Utils;
 
 /**
  * 
+ * The custom MouseListener for the Save button
  * @author Patrick Wang, Andrew Yoo
- * @apiNote the custom MouseListener for the Save button
  *
  */
 public class SaveListener implements MouseListener{

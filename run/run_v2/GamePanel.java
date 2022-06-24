@@ -7,7 +7,7 @@ import javax.swing.*;
 /**
  * 
  * @author Patrick Wang, Andrew Yoo
- * @apiNote The game panel where the user will be able to play Cookie Clickers
+ *  The game panel where the user will be able to play Cookie Clickers
  *
  */
 public class GamePanel extends JPanel{
@@ -20,7 +20,7 @@ public class GamePanel extends JPanel{
 	
 	/**
 	 * 
-	 * @apiNote Constructor for the GamePanel class
+	 *  Constructor for the GamePanel class
 	 * 
 	 */
 	public GamePanel(MainFrame mainFrame) {
@@ -187,7 +187,7 @@ public class GamePanel extends JPanel{
 	/**
 	 * 
 	 * @param cookies - int
-	 * @apiNote Method that the cookie count JPanel to the new amount of cookies
+	 *  Method that the cookie count JPanel to the new amount of cookies
 	 * 
 	 */
 	public void updateCookies(int cookies) {
@@ -197,7 +197,7 @@ public class GamePanel extends JPanel{
 	/**
 	 * 
 	 * @param multiplier - int
-	 * @apiNote Method that updates the multiplier label and price tag
+	 *  Method that updates the multiplier label and price tag
 	 * 
 	 */
 	public void updateMultiplier(int multiplier) {
@@ -209,7 +209,7 @@ public class GamePanel extends JPanel{
 	/**
 	 * 
 	 * @return the price for the next multiplier - int
-	 * @apiNote Method that returns the next multiplier upgrade price
+	 *  Method that returns the next multiplier upgrade price
 	 * 
 	 */
 	public int getMultiPrice() {

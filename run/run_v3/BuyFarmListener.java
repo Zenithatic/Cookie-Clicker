@@ -9,7 +9,7 @@ import javax.sound.sampled.*;
 /**
  * 
  * @author Patrick Wang, Andrew Yoo
- * @apiNote The custom MouseListener for the Buy Farm button
+ *  The custom MouseListener for the Buy Farm button
  *
  */
 public class BuyFarmListener implements MouseListener{
@@ -21,7 +21,7 @@ public class BuyFarmListener implements MouseListener{
     
     /**
      * 
-     * @apiNote Constructor for the MouseListener class
+     *  Constructor for the MouseListener class
      * 
      */
     public BuyFarmListener() {

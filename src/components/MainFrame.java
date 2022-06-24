@@ -6,8 +6,8 @@ import java.io.*;
 
 /**
  * 
+ * The Main JFrame where the game will be displayed and managed
  * @author Patrick Wang, Andrew Yoo
- * @apiNote The Main JFrame where the game will be displayed and managed
  *
  */
 public class MainFrame extends JFrame{
@@ -52,8 +52,8 @@ public class MainFrame extends JFrame{
 
 	/**
 	 * 
+	 * Constructor for the Main JFrame component
 	 * @param title - String
-	 * @apiNote Constructor for the Main JFrame component
 	 * 
 	 */
 	public MainFrame(String name) {
@@ -110,7 +110,7 @@ public class MainFrame extends JFrame{
 	}
 
 	/**
-	 * @apiNote Getter method to get the amount of cookies
+	 * Getter method to get the amount of cookies
 	 * @return int - amount of cookies in the game
 	 */
 	public int getCookies(){
@@ -118,23 +118,23 @@ public class MainFrame extends JFrame{
 	}
 	
 	/**
+	 * Method to get the current multiplier of the game
 	 * @return multiplier - int
-	 * @apiNote Method to get the current multiplier of the game
 	 */
 	public int getMultiplier() {
 		return this.multiplier;
 	}
 	
 	/**
+	 * Setter method for multiplier
 	 * @param multi - int
-	 * @apiNote Setter method for multiplier
 	 */
 	public void setMultiplier(int multi) {
 		this.multiplier = multi;
 	}
 
 	/**
-	 * @apiNote Method to add cookies to balance
+	 * Method to add cookies to balance
 	 * @param cookies
 	 */
 	public void addCookies(int cookies){
@@ -142,33 +142,32 @@ public class MainFrame extends JFrame{
 	}
 	
 	/**
+	 * Method to subtract cookies to balance
 	 * @param cookies - int
-	 * @apiNote Method to subtract cookies to balance
 	 */
 	public void subtractCookies(int cookies) {
 		this.cookies -= cookies;
 	}
 	
 	/**
+	 * Method that returns the amount of cursors in the game
 	 * @return amount of cursors user owns - int
-	 * @apiNote Method that returns the amount of cursors in the game
 	 */
 	public int getCursors() {
 		return this.cursors;
 	}
 	
 	/**
-	 * 
+	 * Method to set the amount of cursors in the game
 	 * @param cursors - int
-	 * @apiNote Method to set the amount of cursors in the game
 	 */
 	public void setCursors(int cursors) {
 		this.cursors = cursors;
 	}
 	
 	/**
+	 * Method that returns the amount of grandmas in the game
 	 * @return amount of grandmas user owns - int
-	 * @apiNote Method that returns the amount of grandmas in the game
 	 */
 	public int getGrandmas() {
 		return this.grandmas;
@@ -176,33 +175,32 @@ public class MainFrame extends JFrame{
 	
 	/**
 	 * 
+	 *  Method to set the amount of grandmas in the game
 	 * @param grandmas - int
-	 * @apiNote Method to set the amount of grandmas in the game
 	 */
 	public void setGrandmas(int grandmas) {
 		this.grandmas = grandmas;
 	}
 	
 	/**
+	 *  Method that returns the amount of farms in the game
 	 * @return amount of farms user owns - int
-	 * @apiNote Method that returns the amount of farms in the game
 	 */
 	public int getFarms() {
 		return this.farms;
 	}
 	
 	/**
-	 * 
+	 *  Method to set the amount of farms in the game
 	 * @param farms - int
-	 * @apiNote Method to set the amount of farms in the game
 	 */
 	public void setFarms(int farms) {
 		this.farms = farms;
 	}
 	
 	/**
+	 *  Method that returns the amount of mines in the game
 	 * @return amount of mines user owns - int
-	 * @apiNote Method that returns the amount of mines in the game
 	 */
 	public int getMines() {
 		return this.mines;
@@ -210,18 +208,16 @@ public class MainFrame extends JFrame{
 	
 	/**
 	 * 
+	 *  Method to set the amount of farms in the game
 	 * @param farms - int
-	 * @apiNote Method to set the amount of farms in the game
 	 */
 	public void setMines(int mines) {
 		this.mines = mines;
 	}
 	
 	/**
-	 * 
+	 *  Method that returns the amount of mines in the game
 	 * @return amount of factories user owns - int
-	 * @apiNote Method that returns the amount of mines in the game
-	 * 
 	 */
 	public int getFactories() {
 		return this.factories;
@@ -229,8 +225,8 @@ public class MainFrame extends JFrame{
 	
 	/**
 	 * 
+	 *  Method to set the amount of factories in the game
 	 * @param factories - int
-	 * @apiNote Method to set the amount of factories in the game
 	 * 
 	 */
 	public void setFactories(int factories) {
@@ -238,8 +234,8 @@ public class MainFrame extends JFrame{
 	}
 
 	/**
+	 *  Method to set the current visible panel
 	 * @param int - id 
-	 * @apiNote Method to set the current visible panel
 	 */
 	public void setCurrentPanel(int id){
 		// check for panel id and make that panel visible
@@ -281,32 +277,32 @@ public class MainFrame extends JFrame{
 	}
 
 	/**
+	 *  This method returns the instance of the BackgroundMusicPlayer class in the game. 
 	 * @return BackgroundMusicPlayer of the game
-	 * @apiNote This method returns the instance of the BackgroundMusicPlayer class in the game. 
 	 */
 	public BackgroundMusicPlayer getMusic(){
 		return this.bmp;
 	}
 	
 	/**
+	 *  This method returns the instance of the current GamePanel.
 	 * @return the game panel - GamePanel
-	 * @apiNote This method returns the instance of the current GamePanel.
 	 */
 	public GamePanel getGamePanel() {
 		return this.game;
 	}
 	
 	/**
+	 *  This method returns the current loaded slot number in the game
 	 * @return current slot number - int
-	 * @apiNote This method returns the current loaded slot number in the game
 	 */
 	public int getSlot() {
 		return this.currentSlot;
 	}
 	
 	/**
+	 *  This method is used to load up data from a slot.
 	 * @param slot - String
-	 * @apiNote This method is used to load up data from a slot.
 	 */
 	public void loadSlot(String slot) {
 		// determine which slot to load

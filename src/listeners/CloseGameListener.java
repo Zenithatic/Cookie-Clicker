@@ -6,8 +6,8 @@ import myClasses.Utils;
 
 /**
  * 
+ * The custom MouseListener for the close game button
  * @author Patrick Wang, Andrew Yoo
- * @apiNote The custom MouseListener for the close game button
  * 
  */
 public class CloseGameListener implements MouseListener {

@@ -9,7 +9,7 @@ import javax.swing.*;
 /**
  * 
  * @author Patrick Wang, Andrew Yoo
- * @apiNote The custom MouseListener for the return to main menu button in the help panel
+ *  The custom MouseListener for the return to main menu button in the help panel
  * 
  */
 public class BackListener implements MouseListener{

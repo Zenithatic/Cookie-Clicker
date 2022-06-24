@@ -8,13 +8,13 @@ import javax.imageio.ImageIO;
 /**
  * 
  * @author Patrick Wang, Andrew Yoo
- * @apiNote the JPanel where the user will be able to view how to play
+ *  the JPanel where the user will be able to view how to play
  * 
  */
 public class HelpPanel extends JPanel{
 	/**
 	 * 
-	 * @apiNote Constructor for the HelpPanel component
+	 *  Constructor for the HelpPanel component
 	 * 
 	 */
     public HelpPanel(){

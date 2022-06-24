@@ -7,8 +7,8 @@ import myClasses.Utils;
 
 /**
  * 
+ * The custom MouseListener for the play button
  * @author Patrick Wang, Andrew Yoo
- * @apiNote The custom MouseListener for the play button
  * 
  */
 public class PlayListener implements MouseListener{

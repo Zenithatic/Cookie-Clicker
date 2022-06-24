@@ -5,7 +5,7 @@ import javax.sound.sampled.*;
 /**
  * 
  * @author Patrick Wang, Andrew Yoo
- * @apiNote A class to play the background music
+ *  A class to play the background music
  * 
  */
 public class BackgroundMusicPlayer {
@@ -18,7 +18,7 @@ public class BackgroundMusicPlayer {
 
     /**
      * 
-     * @apiNote The constructor for the BackgroundMusicPlayer class
+     *  The constructor for the BackgroundMusicPlayer class
      * 
      */
     public BackgroundMusicPlayer(){
@@ -53,7 +53,7 @@ public class BackgroundMusicPlayer {
     /**
      * 
      * @param decibels - float
-     * @apiNote This method sets the decibel volume for the audio.
+     *  This method sets the decibel volume for the audio.
      * 
      */
     public void setVolume (float decibels){

@@ -7,7 +7,7 @@ import java.awt.event.*;
 /**
  * 
  * @author Patrick Wang
- * @apiNote The MouseListener for the start button
+ *  The MouseListener for the start button
  * 
  */
 public class StartListener implements MouseListener{

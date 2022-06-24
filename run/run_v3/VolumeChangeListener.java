@@ -7,7 +7,7 @@ import java.io.*;
 /**
  * 
  * @author Patrick Wang
- * @apiNote The ChangeListener for when the user changes the volume
+ *  The ChangeListener for when the user changes the volume
  * 
  */
 public class VolumeChangeListener implements ChangeListener{

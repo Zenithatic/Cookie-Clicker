@@ -7,8 +7,8 @@ import myClasses.Utils;
 
 /**
  * 
+ * The custom MouseListener for the settings button
  * @author Patrick Wang, Andrew Yoo
- * @apiNote The custom MouseListener for the settings button
  * 
  */
 public class SettingsButtonListener implements MouseListener{

@@ -9,8 +9,8 @@ import myClasses.Utils;
 
 /**
  * 
+ * The game panel where the user will be able to play Cookie Clickers
  * @author Patrick Wang, Andrew Yoo
- * @apiNote The game panel where the user will be able to play Cookie Clickers
  *
  */
 public class GamePanel extends JPanel{
@@ -30,7 +30,7 @@ public class GamePanel extends JPanel{
 	
 	/**
 	 * 
-	 * @apiNote Constructor for the GamePanel class
+	 *  Constructor for the GamePanel class
 	 * 
 	 */
 	public GamePanel(MainFrame mainFrame) {
@@ -210,16 +210,16 @@ public class GamePanel extends JPanel{
 	}
 	
 	/**
+	 * Method that the cookie count JPanel to the new amount of cookies
 	 * @param cookies - int
-	 * @apiNote Method that the cookie count JPanel to the new amount of cookies
 	 */
 	public void updateCookies(int cookies) {
 		this.cookieCount.setText(String.valueOf(cookies) + "$");
 	}
 	
 	/**
+	 * Method that updates the multiplier label and price tag
 	 * @param multiplier - int
-	 * @apiNote Method that updates the multiplier label and price tag
 	 */
 	public void updateMultiplier(int multiplier) {
 		this.multiplierLabel.setText("Click Multiplier: " + multiplier + "x");
@@ -228,7 +228,7 @@ public class GamePanel extends JPanel{
 	}
 	
 	/**
-	 * @apiNote Method to update the cookies per second label
+	 *  Method to update the cookies per second label
 	 */
 	public void updatePerSec() {
 		// initial value
@@ -260,35 +260,35 @@ public class GamePanel extends JPanel{
 	}
 	
 	/**
-	 * @apiNote Method to update the next cursor price
+	 *  Method to update the next cursor price
 	 */
 	public void updateCursorPrice() {
 		this.nextCursorPrice = Main.getMainFrame().getCursors() * Main.getMainFrame().getCursors() + 10;
 	}
 	
 	/**
-	 * @apiNote Method to update the next grandma price
+	 *  Method to update the next grandma price
 	 */
 	public void updateGrandmaPrice() {
 		this.nextGrandmaPrice = Main.getMainFrame().getGrandmas() * Main.getMainFrame().getGrandmas() + 200;
 	}
 	
 	/**
-	 * @apiNote Method to update the next farm price
+	 *  Method to update the next farm price
 	 */
 	public void updateFarmPrice() {
 		this.nextFarmPrice = Main.getMainFrame().getFarms() * Main.getMainFrame().getFarms() + 1000;
 	}
 	
 	/**
-	 * @apiNote Method to update the next mine price
+	 *  Method to update the next mine price
 	 */
 	public void updateMinePrice() {
 		this.nextMinePrice = Main.getMainFrame().getMines() * Main.getMainFrame().getMines() + 5000;
 	}
 	
 	/**
-	 * @apiNote Method to update the next mine price
+	 *  Method to update the next mine price
 	 */
 	public void updateFactoryPrice() {
 		this.nextFactoryPrice = Main.getMainFrame().getFactories() * Main.getMainFrame().getFactories() + 25000;
@@ -297,8 +297,8 @@ public class GamePanel extends JPanel{
 	
 	/**
 	 * 
+	 * Method that returns the next multiplier upgrade price
 	 * @return the price for the next multiplier - int
-	 * @apiNote Method that returns the next multiplier upgrade price
 	 * 
 	 */
 	public int getMultiPrice() {
@@ -307,8 +307,8 @@ public class GamePanel extends JPanel{
 	
 	/**
 	 * 
+	 * Method that returns the next cursor upgrade price
 	 * @return the price for the next cursor - int
-	 * @apiNote Method that returns the next cursor upgrade price
 	 * 
 	 */
 	public int getCursorPrice() {
@@ -317,8 +317,8 @@ public class GamePanel extends JPanel{
 	
 	/**
 	 * 
+	 * Method that returns the next farm upgrade price
 	 * @return the price for the next farm - int
-	 * @apiNote Method that returns the next farm upgrade price
 	 * 
 	 */
 	public int getFarmPrice() {
@@ -327,8 +327,8 @@ public class GamePanel extends JPanel{
 	
 	/**
 	 * 
+	 * Method that returns the next grandma upgrade price
 	 * @return the price for the next grandma - int
-	 * @apiNote Method that returns the next grandma upgrade price
 	 * 
 	 */
 	public int getGrandmaPrice() {
@@ -337,8 +337,8 @@ public class GamePanel extends JPanel{
 	
 	/**
 	 * 
+	 * Method that returns the next mine upgrade price
 	 * @return the price for the next mine - int
-	 * @apiNote Method that returns the next mine upgrade price
 	 * 
 	 */
 	public int getMinePrice() {
@@ -347,8 +347,8 @@ public class GamePanel extends JPanel{
 	
 	/**
 	 * 
+	 * Method that returns the next factory upgrade price
 	 * @return the price for the next factory - int
-	 * @apiNote Method that returns the next factory upgrade price
 	 * 
 	 */
 	public int getFactoryPrice() {
@@ -357,8 +357,8 @@ public class GamePanel extends JPanel{
 	
 	/**
 	 * 
+	 * Method that returns the upgrade desc JLabel
 	 * @return upgrade description label - JLabel
-	 * @apiNote Method that returns the upgrade desc JLabel
 	 * 
 	 */
 	public JLabel getDescLabel() {

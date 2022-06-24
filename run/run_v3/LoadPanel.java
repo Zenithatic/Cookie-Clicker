@@ -7,13 +7,13 @@ import javax.imageio.ImageIO;
 /**
  * 
  * @author Patrick Wang, Andrew Yoo
- * @apiNote the JPanel where the user will be able to load up or reset their data
+ *  the JPanel where the user will be able to load up or reset their data
  *
  */
 public class LoadPanel extends JPanel{
 	/**
 	 * 
-	 * @apiNote Constructor for the LoadPanel component
+	 *  Constructor for the LoadPanel component
 	 * 
 	 */
 	public LoadPanel() {

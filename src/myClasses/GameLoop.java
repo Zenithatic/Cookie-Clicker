@@ -5,8 +5,8 @@ import main_pkg.Main;
 
 /**
  * 
+ *  Game loop class to manage automatic cookies, etc
  * @author Patrick Wang, Andrew Yoo
- * @apiNote Game loop class to manage automatic cookies, etc
  *
  */
 public class GameLoop implements Runnable{

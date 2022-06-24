@@ -6,7 +6,7 @@ import javax.swing.*;
 /**
  * 
  * @author Patrick Wang, Andrew Yoo
- * @apiNote The custom MouseListener for the load buttons
+ *  The custom MouseListener for the load buttons
  * 
  */
 public class LoadListener implements MouseListener{

@@ -10,7 +10,7 @@ import javax.swing.*;
 /**
  * 
  * @author Patrick Wang, Andrew Yoo
- * @apiNote the custom MouseListener class for reset buttons
+ *  the custom MouseListener class for reset buttons
  *
  */
 public class ResetListener implements MouseListener{

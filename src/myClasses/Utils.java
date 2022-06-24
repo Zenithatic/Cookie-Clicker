@@ -8,17 +8,17 @@ import javax.swing.*;
 
 /**
  * 
+ *  Utils class that has a bunch of methods to reduce repetition
  * @author Patrick Wang
- * @apiNote Utils class that has a bunch of methods to reduce repetition
  *
  */
 public class Utils {
 	/**
+	 *  Method to apply an image to a JButton
 	 * @param item - int
 	 * @param filePath - String
 	 * @param width - int
 	 * @param height - height
-	 * @apiNote Method to apply an image to a JButton
 	 */
 	public static void applyButtonImage(JButton item, String filePath, int width, int height) {
 		// set Image Icon of the button
@@ -33,11 +33,11 @@ public class Utils {
 	}
 	
 	/**
+	 *  Method to apply an image to a JLabel
 	 * @param item - int
 	 * @param filePath - String
 	 * @param width - int
 	 * @param height - height
-	 * @apiNote Method to apply an image to a JLabel
 	 */
 	public static void applyLabelImage(JLabel item, String filePath, int width, int height) {
 		// set Image Icon of the label

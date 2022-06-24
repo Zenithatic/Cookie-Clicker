@@ -9,7 +9,7 @@ import javax.swing.*;
 /**
  * 
  * @author Patrick Wang, Andrew Yoo
- * @apiNote The custom MouseListener for the settings button
+ *  The custom MouseListener for the settings button
  * 
  */
 public class SettingsButtonListener implements MouseListener{

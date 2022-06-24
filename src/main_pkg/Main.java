@@ -3,8 +3,8 @@ import components.*;
 
 /**
  * 
+ * Main class where everything starts and is initialized.
  * @author Patrick Wang, Andrew Yoo
- * @apiNote Main class where everything starts and is initialized.
  * 
  */
 public class Main {
@@ -14,7 +14,7 @@ public class Main {
 	
 	/**
 	 * 
-	 * @apiNote Main method to intialize the entire program
+	 *  Main method to intialize the entire program
 	 * 
 	 */
 	public static void main(String[] args) {
@@ -25,7 +25,7 @@ public class Main {
 	
 	/**
 	 * 
-	 * @apiNote Constructor for the HomePanel component
+	 * Method to return the MainFrame of the game
 	 * @return MainFrame for the game
 	 *
 	 */

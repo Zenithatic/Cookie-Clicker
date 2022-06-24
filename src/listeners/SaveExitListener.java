@@ -8,8 +8,8 @@ import myClasses.Utils;
 
 /**
  * 
+ * The custom MouseListener for the Save and Exit button
  * @author Patrick Wang, Andrew Yoo
- * @apiNote the custom MouseListener for the Save and Exit button
  *
  */
 public class SaveExitListener implements MouseListener{

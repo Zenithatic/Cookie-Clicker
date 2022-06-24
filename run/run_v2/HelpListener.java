@@ -8,7 +8,7 @@ import javax.swing.*;
 /**
  * 
  * @author Patrick Wang, Andrew Yoo
- * @apiNote The custom MouseListener for the help button
+ *  The custom MouseListener for the help button
  * 
  */
 public class HelpListener implements MouseListener{

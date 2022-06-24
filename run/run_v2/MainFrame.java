@@ -6,7 +6,7 @@ import java.io.*;
 /**
  * 
  * @author Patrick Wang, Andrew Yoo
- * @apiNote The Main JFrame where the game will be displayed and managed
+ *  The Main JFrame where the game will be displayed and managed
  *
  */
 public class MainFrame extends JFrame{
@@ -42,7 +42,7 @@ public class MainFrame extends JFrame{
 	/**
 	 * 
 	 * @param title - String
-	 * @apiNote Constructor for the Main JFrame component
+	 *  Constructor for the Main JFrame component
 	 * 
 	 */
 	public MainFrame(String name) {
@@ -95,7 +95,7 @@ public class MainFrame extends JFrame{
 	}
 
 	/**
-	 * @apiNote Getter method to get the amount of cookies
+	 *  Getter method to get the amount of cookies
 	 * @return int - amount of cookies in the game
 	 */
 	public int getCookies(){
@@ -104,7 +104,7 @@ public class MainFrame extends JFrame{
 	
 	/**
 	 * @return multiplier - int
-	 * @apiNote Method to get the current multiplier of the game
+	 *  Method to get the current multiplier of the game
 	 */
 	public int getMultiplier() {
 		return this.multiplier;
@@ -112,14 +112,14 @@ public class MainFrame extends JFrame{
 	
 	/**
 	 * @param multi - int
-	 * @apiNote Setter method for multiplier
+	 *  Setter method for multiplier
 	 */
 	public void setMultiplier(int multi) {
 		this.multiplier = multi;
 	}
 
 	/**
-	 * @apiNote Method to add cookies to balance
+	 *  Method to add cookies to balance
 	 * @param cookies
 	 */
 	public void addCookies(int cookies){
@@ -128,7 +128,7 @@ public class MainFrame extends JFrame{
 	
 	/**
 	 * @param cookies - int
-	 * @apiNote Method to subtract cookies to balance
+	 *  Method to subtract cookies to balance
 	 */
 	public void subtractCookies(int cookies) {
 		this.cookies -= cookies;
@@ -136,7 +136,7 @@ public class MainFrame extends JFrame{
 
 	/**
 	 * @param int - id 
-	 * @apiNote Method to set the current visible panel
+	 *  Method to set the current visible panel
 	 */
 	public void setCurrentPanel(int id){
 		// check for panel id and make that panel visible
@@ -179,7 +179,7 @@ public class MainFrame extends JFrame{
 
 	/**
 	 * @return BackgroundMusicPlayer of the game
-	 * @apiNote This method returns the instance of the BackgroundMusicPlayer class in the game. 
+	 *  This method returns the instance of the BackgroundMusicPlayer class in the game. 
 	 */
 	public BackgroundMusicPlayer getMusic(){
 		return this.bmp;
@@ -187,7 +187,7 @@ public class MainFrame extends JFrame{
 	
 	/**
 	 * @return the game panel - GamePanel
-	 * @apiNote This method returns the instance of the current GamePanel.
+	 *  This method returns the instance of the current GamePanel.
 	 */
 	public GamePanel getGamePanel() {
 		return this.game;
@@ -195,7 +195,7 @@ public class MainFrame extends JFrame{
 	
 	/**
 	 * @return current slot number - int
-	 * @apiNote This method returns the current loaded slot number in the game
+	 *  This method returns the current loaded slot number in the game
 	 */
 	public int getSlot() {
 		return this.currentSlot;
@@ -203,7 +203,7 @@ public class MainFrame extends JFrame{
 	
 	/**
 	 * @param slot - String
-	 * @apiNote This method is used to load up data from a slot.
+	 *  This method is used to load up data from a slot.
 	 */
 	public void loadSlot(String slot) {
 		// determine which slot to load

@@ -6,8 +6,8 @@ import main_pkg.Main;
 
 /**
  * 
+ * The ChangeListener for when the user changes the volume
  * @author Patrick Wang
- * @apiNote The ChangeListener for when the user changes the volume
  * 
  */
 public class VolumeChangeListener implements ChangeListener{

@@ -5,7 +5,7 @@ import java.lang.Runnable;
 /**
  * 
  * @author Patrick Wang, Andrew Yoo
- * @apiNote Game loop class to manage automatic cookies, etc
+ *  Game loop class to manage automatic cookies, etc
  *
  */
 public class GameLoop implements Runnable{

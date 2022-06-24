@@ -7,8 +7,8 @@ import components.*;
 
 /**
  * 
+ * The custom MouseListener for the help button
  * @author Patrick Wang, Andrew Yoo
- * @apiNote The custom MouseListener for the help button
  * 
  */
 public class HelpListener implements MouseListener{

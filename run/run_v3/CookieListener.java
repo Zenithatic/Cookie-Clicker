@@ -8,7 +8,7 @@ import javax.sound.sampled.*;
 /**
  * 
  * @author Patrick Wang, Andrew Yoo
- * @apiNote The custom MouseListener for the cookie button
+ *  The custom MouseListener for the cookie button
  * 
  */
 public class CookieListener implements MouseListener{
@@ -20,7 +20,7 @@ public class CookieListener implements MouseListener{
 	
     /**
      * 
-     * @apiNote Constructor for the CookieListener class
+     *  Constructor for the CookieListener class
      * 
      */
     public CookieListener() {

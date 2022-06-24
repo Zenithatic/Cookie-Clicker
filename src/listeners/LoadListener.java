@@ -7,8 +7,8 @@ import myClasses.Utils;
 
 /**
  * 
+ * The custom MouseListener for the load buttons
  * @author Patrick Wang, Andrew Yoo
- * @apiNote The custom MouseListener for the load buttons
  * 
  */
 public class LoadListener implements MouseListener{

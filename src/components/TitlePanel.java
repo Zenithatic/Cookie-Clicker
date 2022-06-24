@@ -8,15 +8,15 @@ import javax.imageio.ImageIO;
 
 /**
  * 
+ * The title panel for the game
  * @author Patrick Wang, Andrew Yoo
- * @apiNote The title panel for the game
  *
  */
 public class TitlePanel extends JPanel{
 	
 	/**
 	 * 
-	 * @apiNote Contructor for the TitlePanel component
+	 *  Contructor for the TitlePanel component
 	 * 
 	 */
 	public TitlePanel() {
